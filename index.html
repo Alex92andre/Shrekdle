@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Le Quiz du Marais — un quiz Shrek par jour</title>
+<title>Shrekdle</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@500;700;900&family=Alegreya:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
@@ -217,7 +217,7 @@ footer{padding:24px 20px 90px;text-align:center}
   </div>
   <div class="hero-content">
     <span class="kicker">Un quiz par jour · pas plus, ogre&nbsp;!</span>
-    <h1><span>Le Quiz</span><br><span class="l2">du Marais</span></h1>
+    <h1><span>Shrekdle</span><br><span class="l2"></span></h1>
     <p class="lede">Chaque bonne réponse pousse Shrek à entrouvrir la porte de ses toilettes. À cinq sur cinq, il jaillit à travers ton écran. Une seule tentative par jour.</p>
     <div class="hero-actions" id="heroActions"></div>
   </div>
@@ -1032,7 +1032,7 @@ function renderDone(just,meta){
 function copyScore(){
  const st=GAME.st,qs=getDaily();
  const marks=(st.lastAnswers||[]).map((k,i)=>k===qs[i].correct?'●':'✕').join(' ');
- const txt='Le Quiz du Marais — '+new Date().toLocaleDateString('fr-FR')+'\n'+marks+' → '+st.lastScore+'/5\nSérie : '+st.streak+' jour'+(st.streak>1?'s':'')+' (record : '+st.best+')';
+ const txt='Shrekdle — '+new Date().toLocaleDateString('fr-FR')+'\n'+marks+' → '+st.lastScore+'/5\nSérie : '+st.streak+' jour'+(st.streak>1?'s':'')+' (record : '+st.best+')';
  if(navigator.clipboard)navigator.clipboard.writeText(txt).then(()=>toast('Score copié — va le flatter au village.')).catch(()=>toast('Impossible de copier.'));
  else toast('Copie non supportée.');
 }
