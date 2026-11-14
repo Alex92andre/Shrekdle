@@ -213,6 +213,9 @@ footer{padding:24px 20px 90px;text-align:center}
 .g-hud b{color:#3a2415}
 #gameCv{width:100%;aspect-ratio:320/100;image-rendering:pixelated;border-radius:10px;border:2px solid #8a7448;display:block;background:#10180a;touch-action:none;cursor:pointer}
 .g-foot{margin-top:9px;font-size:13.5px;font-style:italic;color:var(--ink2);text-align:center}
+.nav-btn{margin-left:auto;margin-right:12px;display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border:1px solid rgba(243,232,201,.28);border-radius:999px;background:rgba(12,16,6,.55);backdrop-filter:blur(4px);color:var(--cream);font-weight:700;text-decoration:none;transition:.15s}
+.nav-btn:hover{background:rgba(231,182,79,.18);border-color:var(--gold)}
+@media(max-width:560px){.nav-btn{font-size:13px;padding:7px 11px;margin-right:8px}}
 </style>
 </head>
 <body>
@@ -224,6 +227,7 @@ footer{padding:24px 20px 90px;text-align:center}
   <div class="fireflies" id="fireflies"></div>
   <div class="hero-top">
     <div class="brand"><span class="dot"></span> Le Marais</div>
+    <a class="nav-btn" href="personnage.html">🔎 Qui est ce personnage ?</a>
     <div class="streak-pill" id="pill"><span class="fire"></span><span id="pillN">0 jour</span></div>
   </div>
   <div class="hero-content">
