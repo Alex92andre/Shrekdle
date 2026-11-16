@@ -54,21 +54,10 @@ function up(src){const w=src.width,h=src.height,d=src.getContext('2d').getImageD
 const spr=(rows,pal)=>up(mk(rows,pal));
 const dr=(c,x,y)=>cx.drawImage(c,x-.5,y-.5,c.width/K,c.height/K);
 const mir=rows=>rows.map(r=>r.split('').reverse().join(''));
-/* L'Âne : sprites pixelisés issus de la planche choisie. */
-const DP={a:'#6f5244',b:'#977764',c:'#be9e88',d:'#e0c4ad',e:'#2b2222',f:'#ebd5c0',g:'#784b46',h:'#f0e1cb'};
-const JUMP_ROWS=[
-'................................','......dad.......dd..............','......db........ad..............','.......ba......ab...............','.......aaddd..ab................','.......d.....ab.................','...........d.a..................','.......daaa.d...................','.......d.aaa....................','......bbba.a....................','.....aecbbab....................','.....bcbcb.aa..........dd.......','......abb..a...........d........','......bb..a...........dd........','......d..a..d..........d........','......daa..a............d.......','..........aa.....d.d............','.........bba.a..aaaa...d........','.........bbaaaaaaaaaa...........','........dbbbaaaaaaaaaa..........','.........cbbaaaaaaaaaa..........','.........bbbaaa.aaa.aa..........','.........acbaaa.aaa.aa..........','..........abaa.aba..aa..........','..........ad.a....dd.a..........','..........a..b........a.........','..........adda.........a........','..........a..a.........a.........','.........da..a....ad...a..........','..........a..b....a....aa.......','..........d......d.....d........','.........dd.dd..........d.......'
-];
-const RUN_ROWS=[
-'................................','................d...............','............a...d....d..........','..........df...d...aa...........','.........ddd.d....bb............','......ddd...dd..abb.............','.....daa......abcb..............','.......a.aa.aaaa................','..d.d.a.aaa.....................','.bcccbaabaad.....................','.ecbccbbaaa..................d..','bccccccaaaad...............dd...','.aaabad.aaa...............ddd...','.bec...aa..dd.................d.','..b...aa..................d.....','....aab.aa.........aa......d....','...fab..baaa....aaaaaaa.........','...ab..abbaaaaaaaaaaaaaadd......','........cbaaaaaaaaaaaaaad.......','.......acbaaaaaaaaaaaaaa........','.......bbcaaaaaaaaaa.aaa........','.......bccbaaaaaaaa..aaa........','........bb.aaa..aaaa.aaf........','........aaaaaa.bbab.d.aa..........','......dbaaaaa.abba.......da.....','......aaad.........d.......ad...','......b......a.d....a......a....','.....ba...dd................dd..','...abad.....................dd..','...aa.....a.....................','..dd............................','..d.............................'
-];
-const CROUCH_ROWS=[
-'.aba............................','.ba........d..........d.........','...........a........d...........','...........a........aad.........','..........ab......aaba..........','..........ab.d....abbd..........','..........dc.d...acb.........d..','...........a.....ba........dd...','..............d...........dddd..','...........d..............d.....','..........daaa......d....d......','...........aaaba....aaaaaa......','..........a.aa....aaaaaaaaa.....','..........abab.a..aaaaaa.aaa....','........dcccbabaa.aaaaa.aaaad...','........accbcbaa..aaaaa.aaaad...','.......abbbbcba...aa..a..aaa....','....daadabbbba.....a..aa........','...dd..ddaaaa.daaaaaaaad.a......','...ddd....aa..ddddd.d...........'
-];
-const jumpSprite=spr(mir(JUMP_ROWS),DP);
-const runA=spr(mir(RUN_ROWS),DP),runB=spr(mir(RUN_ROWS),DP);
-const duckA=spr(mir(CROUCH_ROWS),DP),duckB=spr(mir(CROUCH_ROWS),DP);
-const PH=32,PDH=20;
+/* Âne : sprite pixel-art détaillé inspiré de l'image de référence. */
+const donkeyImg=new Image();
+donkeyImg.src='donkey.svg';
+const PH=41,PDH=30;
 /* obstacles */
 const PS={G:'#9bc53d',g:'#9bc53d',K:'#1a1208',M:'#5a1e14',V:'#5a3d22',S:'#d8cfa6',P:'#6a4a2a',B:'#231710'};
 const TOP=['..GGGGGGGG..','.GGGGGGGGGG.','gGGKGGGKGGGg','.GGGGGGGGGG.','.GGGGMMGGGG.','..GGGGGGGG..','.VVVVSSVVVV.','GVVVSSSSVVVG','GVVSSSSSSVVG','.VSSSSSSSSV.','..SSSSSSSS..','..PPPPPPPP..'];
@@ -131,7 +120,7 @@ function update(){
  if(!P.onG){P.vy+=G+(duckKey?.35:0);P.b+=P.vy;if(P.b>=GY){P.b=GY;P.vy=0;P.onG=true}}
  obs.forEach(o=>o.x-=(o.d?o.v:speed));obs=obs.filter(o=>o.x>-30);
  const l=obs[obs.length-1];if(!l||GW-l.x>gap)spawn();
- const h=ducking?PDH:PH,px=26,pw=28,top=P.b-h+2,bot=P.b-1;
+ const h=ducking?PDH:PH,px=22,pw=40,top=P.b-h+2,bot=P.b-1;
  for(const o of obs){if(px+pw>o.x+2&&px<o.x+o.w-2&&bot>o.y+2&&top<o.y+o.h-1){die();return}}
 }
 function layer(c,f,y){const o=-((dist*f)%TW);for(let x=o;x<GW;x+=TW)blit(c,sn(x),y)}
@@ -142,9 +131,14 @@ function draw(){
  layer(gnd,1,GY-3);
  obs.forEach(o=>{if(o.d)dr((frame>>3)&1?dragUp:dragDn,sn(o.x),sn(o.y-(((frame>>3)&1)?0:1)));else for(let i=0;i<o.n;i++)dr(o.c,sn(o.x+i*(o.c.lw+2)),o.y)});
  const ducking=duckKey&&P.onG&&st==='run',ph=(frame>>2)&1;
- const sp=ducking?(ph?duckB:duckA):(!P.onG?jumpSprite:(ph?runB:runA));
- const bob=(!ducking&&P.onG&&st==='run'&&ph)?-1:0;
- dr(sp,26,sn(P.b-sp.lh+bob));
+ if(donkeyImg.complete&&donkeyImg.naturalWidth){
+   const w=46,h=41,x=20,y=P.b-h;
+   cx.save();
+   if(ducking){cx.translate(x,y+h*(1-.72));cx.scale(1,.72);cx.drawImage(donkeyImg,0,0,w,h);}
+   else if(!P.onG){cx.translate(x+w/2,y+h/2);cx.rotate(-.07);cx.drawImage(donkeyImg,-w/2,-h/2,w,h);}
+   else {cx.drawImage(donkeyImg,x,y+(ph?-1:0),w,h);}
+   cx.restore();
+ }
  const ty=Math.round(GY*.38);
  if(st==='idle'){text('SWAMP GAME',GW/2,ty);text('SAUTER : ESPACE / TAP',GW/2,ty+14,'#d9c99d');text('S\'ACCROUPIR : BAS',GW/2,ty+25,'#d9c99d')}
  if(st==='dead'){text('PERDU !',GW/2,ty,'#e8806a');text('Les ogres ont des couches...',GW/2,ty+14,'#e8806a');text('REJOUER : ESPACE / TAP',GW/2,ty+27,'#d9c99d')}
