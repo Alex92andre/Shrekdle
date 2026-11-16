@@ -54,13 +54,49 @@ function up(src){const w=src.width,h=src.height,d=src.getContext('2d').getImageD
 const spr=(rows,pal)=>up(mk(rows,pal));
 const dr=(c,x,y)=>cx.drawImage(c,x-.5,y-.5,c.width/K,c.height/K);
 const mir=rows=>rows.map(r=>r.split('').reverse().join(''));
-/* l'Âne (joueur) */
-const PD={a:'#8c8794',l:'#cfc9c0',K:'#1a1208',d:'#4d4a55'};
-const HEAD=['.aa.aa........','.aaaaa........','llaKaa........','lllaaaaaaaaaa.','.llaaaaaaaaaaa','...aaaaaaaaaaa','...aaaaaaaaaad','...aaaaaaaaaa.'];
-const runA=spr(mir([...HEAD,'...a.a....a.a.','...d.d....d.d.','...d.d....d.d.']),PD),runB=spr(mir([...HEAD,'...aa.....aa..','...dd.....dd..','..dd.......dd.']),PD);
-const DUCK=['.aa.aa........','llaKaaaaaaaaa.','lllaaaaaaaaaad','.llaaaaaaaaaa.','..aaaaaaaaaaa.'];
-const duckA=spr(mir([...DUCK,'..a.a....a.a..','..d.d....d.d..']),PD),duckB=spr(mir([...DUCK,'...aa.....aa..','..dd.......dd.']),PD);
-const PH=11,PDH=7;
+/* l'Âne (joueur) — longues oreilles, crinière sombre, museau clair et pattes animées */
+const PD={a:'#85818a',l:'#c9c3bd',K:'#211a18',d:'#514b52',E:'#f4e8d8',k:'#211514',p:'#8d5965',w:'#fff0d2'};
+const DONKEY=[
+'....a....a........',
+'...aa....aa.......',
+'...aa....aa.......',
+'....aaaaaa........',
+'...aaaaaaaa.......',
+'..aaaaaaaaaa......',
+'..aaaaKaaaaaaa....',
+'..aaaEkaEkaaaa....',
+'..aaaaaalllll.....',
+'...aaaaaapppll....',
+'....aaaaawwwlll...',
+'.....aaaaaaaaaaaa.',
+'......aaaaaaaaaaaa',
+'......dd....dd....',
+'......dd....dd....',
+'.....ddd....ddd...',
+'.....ddd....ddd...',
+'....dddd....dddd..'
+];
+const runA=spr(DONKEY,PD),runB=spr([...DONKEY.slice(0,13),
+'.....aaaaaaaaaaaa.',
+'......dd....dd....',
+'.....ddd....ddd...',
+'......dd....dd....',
+'....dddd....dddd..'],PD);
+const DUCK=[
+'..................',
+'....a....a........',
+'...aa....aa.......',
+'...aa....aa.......',
+'....aaaaaaaa......',
+'...aaaaaaaaaaaa...',
+'..aaaaaaaaaaaaaa..',
+'..aaaaKaaaaaaalll..',
+'..aaaEkaEkaaaallll.',
+'...aaaaaaaapppllll.',
+'....dd....dd.......'
+];
+const duckA=spr(DUCK,PD),duckB=spr([...DUCK.slice(0,9),'...aaaaaaaapppllll.','.....dd....dd......'],PD);
+const PH=18,PDH=11;
 /* obstacles */
 const PS={G:'#9bc53d',g:'#9bc53d',K:'#1a1208',M:'#5a1e14',V:'#5a3d22',S:'#d8cfa6',P:'#6a4a2a',B:'#231710'};
 const TOP=['..GGGGGGGG..','.GGGGGGGGGG.','gGGKGGGKGGGg','.GGGGGGGGGG.','.GGGGMMGGGG.','..GGGGGGGG..','.VVVVSSVVVV.','GVVVSSSSVVVG','GVVSSSSSSVVG','.VSSSSSSSSV.','..SSSSSSSS..','..PPPPPPPP..'];
@@ -123,7 +159,7 @@ function update(){
  if(!P.onG){P.vy+=G+(duckKey?.35:0);P.b+=P.vy;if(P.b>=GY){P.b=GY;P.vy=0;P.onG=true}}
  obs.forEach(o=>o.x-=(o.d?o.v:speed));obs=obs.filter(o=>o.x>-30);
  const l=obs[obs.length-1];if(!l||GW-l.x>gap)spawn();
- const h=ducking?PDH:PH,px=32,pw=10,top=P.b-h+2,bot=P.b-1;
+ const h=ducking?PDH:PH,px=27,pw=18,top=P.b-h+2,bot=P.b-1;
  for(const o of obs){if(px+pw>o.x+2&&px<o.x+o.w-2&&bot>o.y+2&&top<o.y+o.h-1){die();return}}
 }
 function layer(c,f,y){const o=-((dist*f)%TW);for(let x=o;x<GW;x+=TW)blit(c,sn(x),y)}
@@ -134,7 +170,7 @@ function draw(){
  layer(gnd,1,GY-3);
  obs.forEach(o=>{if(o.d)dr((frame>>3)&1?dragUp:dragDn,sn(o.x),sn(o.y-(((frame>>3)&1)?0:1)));else for(let i=0;i<o.n;i++)dr(o.c,sn(o.x+i*(o.c.lw+2)),o.y)});
  const ducking=duckKey&&P.onG&&st==='run',ph=(frame>>2)&1,sp=ducking?(ph?duckB:duckA):(!P.onG?runA:(ph&&st==='run'?runB:runA));
- dr(sp,30,sn(P.b-sp.lh));
+ dr(sp,26,sn(P.b-sp.lh));
  const ty=Math.round(GY*.38);
  if(st==='idle'){text('SWAMP GAME',GW/2,ty);text('SAUTER : ESPACE / TAP',GW/2,ty+14,'#d9c99d');text('S\'ACCROUPIR : BAS',GW/2,ty+25,'#d9c99d')}
  if(st==='dead'){text('PERDU !',GW/2,ty,'#e8806a');text('Les ogres ont des couches...',GW/2,ty+14,'#e8806a');text('REJOUER : ESPACE / TAP',GW/2,ty+27,'#d9c99d')}
