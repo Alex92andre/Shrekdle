@@ -86,7 +86,7 @@ input:disabled{opacity:.55}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
 </head>
-<body>
+<body data-game="fiche">
 <div id="flies"></div>
 <div class="top"><a class="brand" href="index.html"><span class="dot"></span> Le Marais</a><a class="nav-btn" href="index.html">← Accueil</a></div>
 <main>
@@ -95,7 +95,7 @@ input:disabled{opacity:.55}
     <div class="chips"><span class="chip" id="mode">Défi du jour</span><span class="chip">Essais : <b id="cnt">0</b></span></div>
     <form class="form" id="form" autocomplete="off">
       <div class="rowf">
-        <div class="field"><input id="inp" type="text" placeholder="Ex : Shrek" role="combobox" aria-expanded="false" autocapitalize="off" spellcheck="false"><ul class="sug" id="sug" role="listbox"></ul></div>
+        <div class="field"><input id="inp" type="text" placeholder="Ex : Shrek" role="combobox" aria-label="Nom du personnage" aria-controls="sug" aria-expanded="false" autocapitalize="off" spellcheck="false"><ul class="sug" id="sug" role="listbox"></ul></div>
         <button class="btn" id="go" type="submit">Valider</button>
       </div>
     </form>
@@ -112,117 +112,8 @@ input:disabled{opacity:.55}
   <div class="foot">Site de fan non officiel — Shrek © DreamWorks. Projet privé.</div>
 </main>
 <div class="toast" id="toast"></div>
-<script>
-const $=s=>document.querySelector(s);
-/* ====================== BASE DE DONNÉES DES FICHES ======================
-   Colonnes : [nom, fichier-image, genre, espèce, film (1 à 6), âge (0 à 3), ...alias]
-   genre : M = masculin, F = féminin, G = groupe
-   âge   : 0 enfant · 1 jeune adulte · 2 adulte · 3 âgé
-   Les informations sont à relire / corriger avec Shrek.wiki : il suffit de modifier la ligne du personnage. */
-const FILMS=[null,{n:'Shrek',y:2001},{n:'Shrek 2',y:2004},{n:'Shrek le Troisième',y:2007},{n:'Shrek 4',y:2010},{n:'Le Chat Potté',y:2011},{n:'Le Chat Potté 2',y:2022}];
-const AGES=['Enfant','Jeune adulte','Adulte','Âgé'];
-const GENRES={M:'Masculin',F:'Féminin',G:'Groupe'};
-const CHARS=[
- ['Shrek','shrek','M','Ogre',1,2],['Fiona','fiona','F','Ogre',1,1],['L’Âne','ane','M','Âne',1,2,'Donkey','Ane'],['Lord Farquaad','lord-farquaad','M','Humain',1,2,'Farquaad'],
- ['Le Chat Potté','chat-potte','M','Chat',2,2,'Puss in Boots','Chat Botté'],['Gingy','gingy','M','Biscuit',1,2,'Pain d’épices'],['La Dragonne','dragonne','F','Dragon',1,2,'Dragon'],
- ['Le Prince Charmant','prince-charmant','M','Humain',2,1,'Charming'],['La Fée Marraine','fee-marraine','F','Fée',2,2,'Fée Carabosse','Carabosse'],
- ['Le Roi Harold','roi-harold','M','Humain',2,3,'Harold'],['La Reine Lillian','reine-lillian','F','Humain',2,3,'Lillian'],['Tracassin','tracassin','M','Lutin',3,2,'Rumplestiltskin','Rumpelstiltskin'],
- ['Pinocchio','pinocchio','M','Pantin',1,0],['Le Grand Méchant Loup','grand-mechant-loup','M','Loup',1,2,'Loup'],['Les Trois Petits Cochons','trois-petits-cochons','G','Cochon',1,1,'Cochons'],
- ['Doris','doris','F','Humain',2,2],['Mabel','mabel','F','Humain',3,2],['Mongo','mongo','M','Biscuit',2,2],['Merlin','merlin','M','Humain',3,3],['Arthur','arthur','M','Humain',3,1,'Artie'],
- ['Cendrillon','cendrillon','F','Humain',1,1],['Blanche-Neige','blanche-neige','F','Humain',1,1],['La Belle au bois dormant','belle-au-bois-dormant','F','Humain',3,1],['Raiponce','raiponce','F','Humain',3,1],
- ['Le Petit Chaperon rouge','petit-chaperon-rouge','F','Humain',2,0],['Robin des Bois','robin-des-bois','M','Humain',1,2],['Capitaine Crochet','capitaine-crochet','M','Humain',3,2,'Crochet'],
- ['Peter Pan','peter-pan','M','Humain',3,0],['Les Souris aveugles','souris-aveugles','G','Souris',1,2],['Les Dronkeys','dronkeys','G','Dronkey',2,0],['Fergus','fergus','M','Ogre',3,0],['Farkle','farkle','M','Ogre',3,0],
- ['Felicia','felicia','F','Ogre',3,0],['Brogan','brogan','M','Ogre',4,2],['Cookie','cookie','M','Ogre',4,2],['Gretched','gretched','F','Sorcière',4,2],['Le Cyclope','cyclope','M','Cyclope',3,2],
- ['Le Joueur de flûte','joueur-de-flute','M','Humain',1,2],['Kitty Pattes de Velours','kitty-pattes-de-velours','F','Chat',5,2,'Kitty Softpaws'],['Humpty Dumpty','humpty-dumpty','M','Œuf',5,2],
- ['Boucle d’or','boucle-d-or','F','Humain',6,2],['Jack','jack','M','Humain',5,2],['Jill','jill','F','Humain',5,2],['Mama Luna','mama-luna','F','Humain',5,3],['Perrito','perrito','M','Chien',6,2],
- ['Les Trois Ours','trois-ours','G','Ours',6,2],['Les Joyeux Compagnons','joyeux-compagnons','G','Humain',1,2],['La Méchante Reine','mechante-reine','F','Humain',3,2],['Les Sept Nains','sept-nains','G','Nain',3,2],
- ['Le Capitaine des gardes','capitaine-des-gardes','M','Humain',1,2]
-].map(a=>({n:a[0],f:a[1],g:a[2],sp:a[3],fi:a[4],ag:a[5],al:a.slice(6)}));
-/* ====================== outils ====================== */
-function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
-function shuffle(arr,rng){for(let i=arr.length-1;i>0;i--){const j=Math.floor(rng()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]]}return arr}
-const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[’`]/g,"'").replace(/\s+/g,' ').trim();
-const noArt=s=>s.replace(/^(l'|le |la |les |un |une |des )/,'');
-CHARS.forEach(c=>{const ks=[c.n,...c.al].map(norm);c.keys=[...new Set([...ks,...ks.map(noArt)])];c.sort=noArt(norm(c.n))});
-function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2600)}
-function fmtCD(ms){const s=Math.max(0,Math.floor(ms/1000));return[s/3600,s%3600/60,s%60].map(v=>String(Math.floor(v)).padStart(2,'0')).join(':')}
-function dayNum(){const d=new Date();return Math.floor(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())/864e5)}
-function msTomorrow(){const n=new Date();return new Date(n.getFullYear(),n.getMonth(),n.getDate()+1)-n}
-for(let i=0;i<14;i++){const f=document.createElement('span');f.className='fly';f.style.cssText='left:'+Math.random()*100+'%;top:'+(10+Math.random()*85)+'%;--d:'+(9+Math.random()*9)+'s;--dl:'+(-Math.random()*16)+'s;--a:'+(20+Math.random()*40)+'px';$('#flies').appendChild(f)}
-/* ====================== état ====================== */
-const DAY=dayNum(),ORDER=shuffle([...CHARS.keys()],mulberry32(20261115));
-let dailySecret=CHARS[ORDER[((DAY%CHARS.length)+CHARS.length)%CHARS.length]],secret=dailySecret;
-const forced=new URLSearchParams(location.search).get('perso'),TEST=forced&&CHARS.find(c=>c.f===forced);
-if(TEST){secret=dailySecret=TEST}
-const KEY='shrekdle-fiche-v1';
-let S={day:DAY,tries:[],won:false};
-try{const r=JSON.parse(localStorage.getItem(KEY)||'null');if(r&&r.day===DAY&&!TEST)S=r}catch(e){}
-let daily=S,mode='daily',freeQ=[];
-function save(){if(TEST||mode!=='daily')return;try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
-/* ====================== affichage ====================== */
-const byName=n=>CHARS.find(c=>c.n===n);
-function thumb(c,cell){const im=document.createElement('img'),ex=['png','jpg','jpeg','webp'];let i=0;im.alt='';
- im.onerror=()=>{if(i>=ex.length){im.remove();cell.textContent=noArt(c.n).charAt(0).toUpperCase();return}im.src='personnages/'+c.f+'.'+ex[i++]};im.onerror();return im}
-function cmp(a,b){return a===b?'ok':'no'}
-function arrow(g,s){return g<s?'↑':'↓'}
-function rowFor(c,fresh){
- const el=document.createElement('div');el.className='rowx';let i=0;
- const mk=(cls,html)=>{const d=document.createElement('div');d.className='cell '+cls;d.style.setProperty('--i',fresh?i:0);if(!fresh)d.style.animation='none';i++;d.innerHTML=html;return d};
- const pic=mk('im'+(c===secret?' win':''),'');pic.appendChild(thumb(c,pic));el.appendChild(pic);
- const n=mk('nm'+(c===secret?' win':''),'');n.textContent=c.n;el.appendChild(n);
- el.appendChild(mk(cmp(c.sp,secret.sp),c.sp));
- el.appendChild(mk(cmp(c.g,secret.g),GENRES[c.g]));
- const fo=FILMS[c.fi],ok1=c.fi===secret.fi;el.appendChild(mk(ok1?'ok':'no',fo.n+'<small>'+fo.y+'</small>'+(ok1?'':'<span class="ar">'+arrow(c.fi,secret.fi)+'</span>')));
- const ok2=c.ag===secret.ag;el.appendChild(mk(ok2?'ok':'no',AGES[c.ag]+(ok2?'':'<span class="ar">'+arrow(c.ag,secret.ag)+'</span>')));
- return el}
-function render(fresh){
- const g=$('#grid');g.innerHTML='';
- const hr=document.createElement('div');hr.className='rowx';
- ['','Personnage','Espèce','Genre','1re apparition','Âge'].forEach(t=>{const d=document.createElement('div');d.className='h';d.textContent=t;hr.appendChild(d)});g.appendChild(hr);
- const names=S.tries.slice().reverse();
- names.forEach((n,k)=>g.appendChild(rowFor(byName(n),fresh&&k===0)));
- $('#legend').style.display=S.tries.length?'block':'none';
- $('#cnt').textContent=S.tries.length;$('#mode').textContent=mode==='daily'?'Défi du jour':'Mode libre';$('#freebar').style.display=mode==='free'?'block':'none';
- $('#inp').disabled=$('#go').disabled=S.won;
- const w=$('#win');w.classList.toggle('on',S.won);
- if(S.won){const n=S.tries.length;$('#winT').textContent='Bravo ! C’était '+secret.n+' !';$('#winP').textContent='Trouvé en '+n+' essai'+(n>1?'s':'')+'.';$('#free').textContent=mode==='daily'?'Continuer à jouer ▶':'Personnage suivant ▶';$('#cdw').style.display=mode==='daily'?'flex':'none'}}
-/* ====================== autocomplétion ====================== */
-const inp=$('#inp'),sug=$('#sug');let list=[],act=-1;
-function matches(q){q=norm(q);if(!q)return[];return CHARS.filter(c=>!S.tries.includes(c.n)&&c.keys.some(k=>k.startsWith(q))).sort((a,b)=>a.sort.localeCompare(b.sort,'fr'))}
-function showSug(){list=matches(inp.value);act=-1;
- sug.innerHTML=list.map((c,i)=>{const q=norm(inp.value),hit=!norm(c.n).startsWith(q)&&!noArt(norm(c.n)).startsWith(q)?c.al.find(a=>norm(a).startsWith(q)||noArt(norm(a)).startsWith(q)):'';return'<li role="option" data-i="'+i+'">'+c.n+(hit?'<small>('+hit+')</small>':'')+'</li>'}).join('');
- sug.classList.toggle('on',list.length>0);inp.setAttribute('aria-expanded',list.length>0)}
-function mark(){[...sug.children].forEach((li,i)=>li.classList.toggle('act',i===act));const a=sug.children[act];if(a)a.scrollIntoView({block:'nearest'})}
-inp.addEventListener('input',()=>{$('#msg').textContent='';showSug()});
-inp.addEventListener('keydown',e=>{
- if(e.key==='ArrowDown'&&list.length){e.preventDefault();act=(act+1)%list.length;mark()}
- else if(e.key==='ArrowUp'&&list.length){e.preventDefault();act=(act-1+list.length)%list.length;mark()}
- else if(e.key==='Escape')sug.classList.remove('on')});
-sug.addEventListener('mousedown',e=>{const li=e.target.closest('li');if(!li)return;e.preventDefault();guess(list[+li.dataset.i])});
-document.addEventListener('click',e=>{if(!e.target.closest('.field'))sug.classList.remove('on')});
-function say(t){$('#msg').textContent=t}
-$('#form').addEventListener('submit',e=>{e.preventDefault();
- const q=norm(inp.value);if(!q)return;let c=act>=0?list[act]:null;
- if(!c){const ex=CHARS.find(x=>x.keys.includes(q));if(ex&&S.tries.includes(ex.n))return say('Tu as déjà essayé '+ex.n+'.');c=ex||(list.length===1?list[0]:null)}
- if(!c)return say('Choisis un personnage dans la liste.');guess(c)});
-function burst(){const r=$('#win').getBoundingClientRect(),x=r.left+r.width/2,y=Math.min(innerHeight*.6,r.top+40);
- for(let i=0;i<22;i++){const s=document.createElement('span');s.style.cssText='position:fixed;z-index:60;width:7px;height:7px;border-radius:50%;background:#ffe9a8;box-shadow:0 0 10px 3px rgba(246,196,83,.6);pointer-events:none;left:'+x+'px;top:'+y+'px';document.body.appendChild(s);
-  const a=Math.PI*2*i/22+Math.random()*.5,d=90+Math.random()*190;s.animate([{transform:'translate(-50%,-50%) scale(1)',opacity:1},{transform:'translate('+Math.cos(a)*d+'px,'+Math.sin(a)*d+'px) scale(.3)',opacity:0}],{duration:900+Math.random()*700,easing:'cubic-bezier(.2,.7,.3,1)'}).onfinish=()=>s.remove()}}
-function guess(c){
- if(S.won||S.tries.includes(c.n))return;
- S.tries.push(c.n);inp.value='';sug.classList.remove('on');list=[];act=-1;say('');
- if(c===secret){S.won=true;save();render(true);setTimeout(burst,1500);return}
- save();render(true);inp.focus()}
-$('#share').addEventListener('click',()=>{
- const sq=n=>{const c=byName(n);return[c.sp===secret.sp,c.g===secret.g,c.fi===secret.fi,c.ag===secret.ag].map(b=>b?'🟩':'🟥').join('')};
- const t='Shrekdle — Fiche mystère'+(mode==='free'?' (mode libre)':'')+'\nTrouvé en '+S.tries.length+' essai'+(S.tries.length>1?'s':'')+'\n'+S.tries.map(sq).join('\n');
- if(navigator.clipboard)navigator.clipboard.writeText(t).then(()=>toast('Résultat copié !')).catch(()=>toast('Impossible de copier.'));else toast('Copie non supportée.')});
-function resetUI(){inp.value='';sug.classList.remove('on');list=[];act=-1;say('');render(false)}
-function startFree(){if(!freeQ.length)freeQ=shuffle(CHARS.filter(c=>c!==dailySecret),Math.random);mode='free';secret=freeQ.pop();S={day:DAY,tries:[],won:false};resetUI();inp.focus()}
-function backDaily(){mode='daily';secret=dailySecret;S=daily;resetUI()}
-$('#free').addEventListener('click',startFree);$('#back').addEventListener('click',backDaily);
-setInterval(()=>{if(dayNum()!==DAY&&!TEST&&mode==='daily')location.reload();$('#cd').textContent=fmtCD(msTomorrow())},1000);$('#cd').textContent=fmtCD(msTomorrow());
-render(false);
-</script>
+<script src="jeu-config.js"></script>
+<script src="jeu-api.js"></script>
+<script src="devinettes.js"></script>
 </body>
 </html>
