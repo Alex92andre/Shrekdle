@@ -486,361 +486,208 @@ const GAME={st:loadState(),phase:'ready',ohStage:0,current:null,heroPose:'idle',
 
 const QUESTIONS={
 easy:[
- {t:'Quelle est la couleur de Shrek ?',o:['vert','bleu','violet','rouge'],n:'Vert pomme, évidemment.'},
- {t:'Un ogre, c’est…',o:['une créature géante des contes','une fée marraine','un nain de jardin','un elfe guerrier'],n:'Grand, vert, et gros consommateur de marais.'},
- {t:'Qui est le meilleur ami bavard de Shrek ?',o:['L’Âne','le Chat Potté','Gingy','Pinocchio'],n:'Il n’a jamais appris à se taire.'},
- {t:'Quelle princesse Shrek part-il sauver ?',o:['Fiona','Cendrillon','Blanche-Neige','Aurora'],n:'La princesse au double daily.'},
- {t:'Qui garde la tour où est enfermée Fiona ?',o:['une dragonne','un cyclope','un géant','un basilic'],n:'Une dragonne… qui s’avérera très romantique.'},
- {t:'Comment s’appelle le bonhomme en pain d’épices ?',o:['Gingy','Croquant','Biscotto','Cookie'],n:'« Pas les boutons de guimauve ! »'},
- {t:'Qui est le méchant du premier Shrek ?',o:['Lord Farquaad','Rumpelstiltskin','le Prince Charmant','la fée Carabosse'],n:'Petit de taille, immense d’arrogance.'},
- {t:'Comment s’appelle le royaume de Farquaad ?',o:['Duloc','Fort Fort Lointain','Camelot','Maraisville'],n:'Une ville parfaite… et parodique.'},
- {t:'Comment s’appelle le royaume des parents de Fiona ?',o:['Fort Fort Lointain','Duloc','Lointainville','Camelot'],n:'Parodie directe de Hollywood.'},
- {t:'Comment s’appelle la mère de Fiona ?',o:['la reine Lillian','la fée Carabosse','la reine Mab','dame Gwen'],n:'Doubled by Julie Andrews en VO.'},
- {t:'Comment s’appelle le père de Fiona ?',o:['le roi Harold','le roi Henri','le roi Léon','le roi Arthur'],n:'Un roi avec un secret froggie.'},
- {t:'Quel félin apparaît dans Shrek 2 ?',o:['Le Chat Potté','Felix','le Cheshire','Grosminet'],n:'Parodie de Zorro, botté et espagnol.'},
- {t:'Comment s’appelle la méchante fée de Shrek 2 ?',o:['la fée Carabosse','la fée Clochette','Maleficent','la bonne fée'],n:'Bonne fée pour les autres, monstre pour Shrek.'},
- {t:'Qui est le fils de la fée Carabosse ?',o:['le Prince Charmant','le Prince Héros','sir Cheval','le Prince bleu'],n:'Beau, blond, cerveau en mode veille.'},
- {t:'Qui est le méchant de Shrek 4 ?',o:['Rumpelstiltskin','le Prince Charmant','Farquaad','Thelonious'],n:'Le nain des contrats piégeux.'},
- {t:'Quel loup vit au marais ?',o:['le Grand Méchant Loup','Fenrir','le loup de Gubbio','Loupio'],n:'Réfugié du conte, calepin de grand-mère inclus.'},
- {t:'Quel pantin ment avec son nez ?',o:['Pinocchio','Gingy','le Miroir','l’Âne'],n:'Le nez s’allonge à chaque mensonge.'},
- {t:'Combien de petits cochons vivent au marais ?',o:['trois','deux','quatre','sept'],n:'Les trois du conte, maison en paille incluse.'},
- {t:'Combien de souris aveugles ?',o:['trois','deux','cinq','quatre'],n:'Elles jouent de la musique et se heurtent aux murs.'},
- {t:'Selon Shrek, les ogres ont des couches comme…',o:['les oignons','les gâteaux','les parades','les choux'],n:'La réplique fondatrice du film.'},
- {t:'Comment s’appelle le miroir parlant de Farquaad ?',o:['le Miroir Magique','Miro-Miro','le Reflet','Speculo'],n:'Un miroir contraint de servir un tyran.'},
- {t:'De qui la Dragonne s’éprend-elle ?',o:['de l’Âne','de Shrek','de Farquaad','du Chat Potté'],n:'Un coup de foudre… pour un âne bavard.'},
- {t:'Quel roi décède au début de Shrek 3 ?',o:['le roi Harold','le roi Arthur','le roi Henri','le roi Léon'],n:'Il « coasse » une dernière fois.'},
- {t:'Qui est désigné héritier du trône dans Shrek 3 ?',o:['Arthur','Shrek','le Chat Potté','Charming'],n:'Un ado roi du chaos à l’école.'},
- {t:'Quel est le surnom d’Arthur ?',o:['Artie','Ari','Tutur','Warty'],n:'Artie pour les intimes.'},
- {t:'Quel enchanteur en retraite aide les héros ?',o:['Merlin','Gandalf','Oz','Prospero'],n:'À la retraite, et fier de l’être.'},
- {t:'Qui est le méchant de Shrek le Troisième ?',o:['le Prince Charmant','Farquaad','Rumpelstiltskin','Mongo'],n:'Un acteur raté, très rancunier.'},
- {t:'Que porte le Chat Potté sur ses pattes ?',o:['des bottes','des chaussettes','des sandales','des patins'],n:'Des bottes… et une épée.'},
- {t:'Qui est le compagnon de la Dragonne ?',o:['l’Âne','Shrek','le Chat Potté','Pinocchio'],n:'Ils ont même une portée hybride.'},
- {t:'Quand Fiona devient-elle ogresse ?',o:['chaque nuit','chaque matin','quand elle ment','à la pleine lune'],n:'Malédiction jour/nuit classique.'},
- {t:'Quel baiser brise la malédiction de Fiona ?',o:['le baiser d’amour vrai','le baiser de minuit','celui d’une fée','sept baisers royaux'],n:'Comme dans tous les bons contes.'},
- {t:'Que fait Farquaad des créatures magiques ?',o:['il les expulse vers le marais de Shrek','il les emprisonne à vie','il les vend','il les apprivoise'],n:'C’est ce qui déclenche toute l’histoire.'},
- {t:'Où vit Shrek ?',o:['dans un marais','dans un château','dans une grotte','sur une île'],n:'« C’est MON marais ! »'},
- {t:'Où Fiona est-elle enfermée ?',o:['dans la tour la plus haute','dans un cachot','dans une cave','dans une cage dorée'],n:'La plus haute du monde connu, même.'},
- {t:'Quelle potion Shrek vole-t-il dans Shrek 2 ?',o:['« Heureux pour toujours »','« Amour éternel »','« Force de géant »','« Invisibilité »'],n:'Beauté instantanée garantie.'},
- {t:'Quel effet produit la potion sur Shrek ?',o:['il devient un beau prince','il devient un géant','il devient invisible','il devient dragon'],n:'Humain, séduisant, et très mal à l’aise.'},
- {t:'Quel effet produit-elle sur l’Âne ?',o:['un étalon blanc majestueux','un poney rose','un chat noir','une licorne'],n:'Son ego n’est jamais redescendu.'},
- {t:'Quelle est la vraie forme du roi Harold ?',o:['une grenouille','une rainette','un crapaud','un lézard'],n:'Le prince-grenouille du conte, version longue.'},
- {t:'Dans quel film Fiona attend-elle un bébé ?',o:['Shrek le Troisième','Shrek 2','Shrek 4','Shrek'],n:'Annonce au départ du bateau.'},
- {t:'Combien de bébés naissent ?',o:['des triplés','des jumeaux','un seul','des quadruplés'],n:'Fergus, Farkle et Felicia.'},
- {t:'Quel métier raté exerce le Prince Charmant dans Shrek 3 ?',o:['acteur de théâtre ambulant','roi','cuisinier','bouffon'],n:'Il joue dans des dîners-spectacles lamentables.'},
- {t:'Qui rassemble les méchants du royaume dans Shrek 3 ?',o:['le Prince Charmant','Farquaad','Rumpelstiltskin','Thelonious'],n:'À la Pomme Empoisonnée, bien sûr.'},
- {t:'Que promet Shrek à Rumpelstiltskin ?',o:['le jour de sa naissance','son marais','sa couronne','son épouse'],n:'Un contrat sans petites lignes.'},
- {t:'Qu’efface le contrat de Rumpel ?',o:['le jour de naissance de Shrek','tout le royaume','Fiona','le marais'],n:'Sans ce jour, Shrek n’a jamais existé.'},
- {t:'Dans le monde alternatif, qui mène les ogres rebelles ?',o:['Fiona','Rumpel','le Chat Potté','Farquaad'],n:'Une Fiona guerrière, jamais sauvée.'},
- {t:'Comment le contrat de Shrek 4 est-il annulé ?',o:['par un baiser d’amour vrai','en le brûlant','par un sort de Merlin','en le déchirant'],n:'L’amour vrai : la seule faille juridique.'},
- {t:'En quelle année le premier film est-il sorti ?',o:['2001','1998','2004','2006'],n:'Il a décroché le tout premier Oscar du meilleur film d’animation.'},
- {t:'Quel studio produit Shrek ?',o:['DreamWorks','Pixar','Disney','Ghibli'],n:'Le film qui a lancé la guerre des ogres à Hollywood.'},
- {t:'Combien de films principaux Shrek compte-t-on ?',o:['quatre','trois','cinq','deux'],n:'2001, 2004, 2007, 2010.'},
- {t:'Qui double Shrek en version française ?',o:['Alain Chabat','Gad Elmaleh','Jamel Debbouze','Jean Reno'],n:'Un doublage devenu culte.'},
- {t:'Qui double l’Âne en anglais ?',o:['Eddie Murphy','Will Smith','Kevin Hart','Chris Rock'],n:'Le roi du monologue improvisé.'},
- {t:'Quelle chanson ouvre le premier film ?',o:['« All Star »','« I’m a Believer »','« Hallelujah »','« Accidentally in Love »'],n:'Smash Mouth, wc, boue : la scène culte.'},
- {t:'Quel groupe reprend « I’m a Believer » au générique ?',o:['Smash Mouth','The Monkees','Queen','The Beatles'],n:'Reprise du tube des Monkees (1966).'},
- {t:'Quelle chanson de Counting Crows accompagne Shrek 2 ?',o:['« Accidentally in Love »','« Mr. Jones »','« Big Yellow Taxi »','« Colorblind »'],n:'Passe pendant la lune de miel.'},
- {t:'Qui chante « Holding Out for a Hero » au bal de Shrek 2 ?',o:['la fée Carabosse','Fiona','la reine Lillian','Blanche-Neige'],n:'Un show de scène digne d’un concert rock.'},
- {t:'Quel tube de Ricky Martin clôt Shrek 2 ?',o:['« Livin’ la Vida Loca »','« María »','« She Bangs »','« La Copa de la Vida »'],n:'Interprété au générique par l’Âne et le Chat.'},
- {t:'« Hallelujah » a été écrite par…',o:['Leonard Cohen','Bob Dylan','Johnny Cash','Elvis Presley'],n:'Sortie en 1984 sur « Various Positions ».'},
- {t:'Où Shrek prend-il sa « douche » au début ?',o:['dans la boue du marais','sous une cascade','dans un bain moussant','dans la rivière'],n:'Sur « All Star », paddle d’horreur de villageois inclus.'},
- {t:'Que peint Shrek sur son panneau ?',o:['« Attention ogre »','« À vendre »','« Marais privé »','« Danger loup »'],n:'Son œuvre d’art du matin.'},
- {t:'Qu’arrive-t-il à l’oiseau quand Fiona chante très haut ?',o:['il explose','il s’évanouit','il s’envole','il chante mieux'],n:'Elle frit ensuite son œuf, sans remords.'},
- {t:'Que cuisinent Shrek et Fiona pour leur dîner romantique ?',o:['un rat des marais grillé','du poulet rôti','une soupe à l’oignon','des champignons farcis'],n:'Grillé à la broche, très chic.'},
- {t:'Comment Shrek remporte-t-il le tournoi de Duloc ?',o:['en faisant du catch','à l’archerie','à la joute','aux échecs'],n:'Slams, clés de bras et foule en délire.'},
- {t:'Que demande Shrek en échange de la délivrance de Fiona ?',o:['son marais','la couronne','de l’or','un titre de chevalier'],n:'Son marais, rien d’autre. Au début.'},
- {t:'Qui dévore Farquaad à la fin du premier film ?',o:['la Dragonne','Shrek','les cochons','Fiona'],n:'Une fin de carrière très rapide.'},
- {t:'Qu’est-ce que la Dragonne recrache après avoir avalé Farquaad ?',o:['sa couronne','ses bottes','son épée','son cheval'],n:'Elle le recrache… en couronne.'},
- {t:'Où se marient Shrek et Fiona ?',o:['dans le marais','à Duloc','au château royal','dans une cathédrale'],n:'Tout le royaume des contes est convié.'},
- {t:'Quelle chanson accompagne la fin du premier film ?',o:['« I’m a Believer »','« All Star »','« Happy Together »','« Hallelujah »'],n:'Tout le monde danse, même les cochons.'},
- {t:'Combien de prétendantes le Miroir présente-t-il à Farquaad ?',o:['trois','deux','quatre','cinq'],n:'Un jeu de drague parodique.'},
- {t:'Laquelle n’est PAS proposée par le Miroir ?',o:['la Belle au bois dormant','Cendrillon','Blanche-Neige','Fiona'],n:'Elle dort encore, probablement.'},
- {t:'Quel objet Farquaad utilise-t-il pour choisir son épouse ?',o:['un miroir magique','une boule de cristal','une baguette','un livre de sorts'],n:'Le miroir, contraint et forcé.'},
- {t:'Comment atteint-on la tour de Fiona ?',o:['par un pont de cordes branlant','par un pont-levis','en volant','par un tunnel'],n:'Le pont qui grince au-dessus du vide.'},
- {t:'Comment le Chat Potté désarme-t-il ses adversaires ?',o:['avec ses yeux tout doux','son ronronnement','sa vitesse','ses griffes'],n:'L’attaque fatale du regard attendrissant.'},
- {t:'De quoi le Chat Potté tousse-t-il de façon comique ?',o:['d’une boule de poils','de poussière','de plumes','de bulles'],n:'La boule de poils : son seul point faible.'},
- {t:'Vers quel royaume se rend le couple dans Shrek 2 ?',o:['Fort Fort Lointain','Duloc','Camelot','Neverland'],n:'« Are we there yet ? » pendant tout le trajet.'},
- {t:'Qui invite Shrek et Fiona à la cour ?',o:['les parents de Fiona','la fée Carabosse','Farquaad','Merlin'],n:'Une lettre d’invitation royale.'},
- {t:'Comment les parents réagissent-ils à Shrek ?',o:['avec horreur','avec joie','ils s’évanouissent de bonheur','ils l’adorent'],n:'Le dîner tourne court, très court.'},
- {t:'Qui suggère d’engager un chasseur de primes ?',o:['la fée Carabosse','la reine Lillian','le Miroir','Charming'],n:'Elle « aide » Harold avec zèle.'},
- {t:'Qui engague officiellement le Chat Potté pour tuer Shrek ?',o:['le roi Harold','Charming','la fée Carabosse','le capitaine des gardes'],n:'Contrat d’assassinat royal.'},
- {t:'Pourquoi le Chat renonce-t-il à sa mission ?',o:['il se rallie à Shrek','il le rate','il s’endort','il est griffé'],n:'Boule de poils, émotion, alliance.'},
- {t:'Dans quelle usine Shrek s’infiltre-t-il ?',o:['celle de potions de la fée','une chocolaterie','une forge','une fromagerie'],n:'Production industrielle de magie.'},
- {t:'Qui avale la potion par accident ?',o:['l’Âne','le Chat Potté','Harold','Charming'],n:'Il rêvait d’être un étalon. Bingo.'},
- {t:'Fiona est-elle aussi transformée par la potion ?',o:['oui, car elle est l’amour de Shrek','non, jamais','elle devient dragonne','elle devient fée'],n:'La potion agit aussi sur l’âme sœur.'},
- {t:'Quelle condition rend la transformation définitive ?',o:['un baiser d’amour vrai avant minuit','trois bains de lune','un sceau royal','une danse au bal'],n:'Minuit, encore et toujours.'},
- {t:'Qui se fait passer pour Shrek transformé auprès de Fiona ?',o:['le Prince Charmant','Harold','le Chat','Rumpelstiltskin'],n:'Un plan monté avec sa maman fée.'},
- {t:'Comment Fiona tombe-t-elle sous le charme de Charming ?',o:['un thé ensorcelé de la fée','un coup de foudre réel','un sort du roi','une potion du Chat'],n:'Servi au bal, sans qu’elle le sache.'},
- {t:'Qui arrête le sort de la fée à la fin de Shrek 2 ?',o:['le roi Harold','Shrek','le Chat','l’Âne'],n:'Il s’interpose avec son plastron d’armure.'},
- {t:'Que devient Harold en s’interposant ?',o:['il redevient grenouille','il devient pierre','il disparaît','il devient ogre'],n:'Le sort se retourne contre lui.'},
- {t:'Comment la reine Lillian accueille-t-elle Harold grenouille ?',o:['avec amour','avec dégoût','en s’enfuyant','en le mettant en cage'],n:'« Je t’ai épousé pour ce que tu es. »'},
- {t:'Quel géant de pain d’épices attaque le château ?',o:['Mongo','Géanto','Brutus','Grossbiscuit'],n:'Cuit géant par le marchand de muffins.'},
- {t:'Que devient Mongo à la fin de l’assaut ?',o:['il fond dans les douves','il s’envole','il gagne','il est mangé'],n:'Un cookie trop proche de l’eau.'},
- {t:'Qui annonce sa mort au début de Shrek 3 ?',o:['le roi Harold','Merlin','le Chat','l’Âne'],n:'En désignant Arthur comme héritier.'},
- {t:'Quel héritier Harold désigne-t-il ?',o:['son neveu Arthur','Shrek','Charming','Fiona'],n:'Un choix qui surprend tout le monde.'},
- {t:'Où étudie Arthur ?',o:['à l’académie Worcestershire','à Duloc','chez les moines','à Camelot'],n:'Un nom qui pique les papilles.'},
- {t:'Comment Arthur est-il traité à l’école ?',o:['comme un loser','comme un champion','comme un roi','comme un fantôme'],n:'Il fait rire tout l’établissement.'},
- {t:'Quel effet raté provoque la magie de Merlin ?',o:['l’Âne et le Chat échangent de corps','ils rajeunissent','ils s’évanouissent','ils devinent l’avenir'],n:'Une téléportation trop émotionnelle.'},
- {t:'Quelle princesse invoque des animaux en chantant ?',o:['Blanche-Neige','Cendrillon','la Belle au bois','Fiona'],n:'Et en métal, s’il vous plaît.'},
- {t:'Quelle princesse s’endort au pire moment ?',o:['la Belle au bois dormant','Cendrillon','Blanche-Neige','Fiona'],n:'Narcolepsie de combat.'},
- {t:'Quelle princesse lance sa pantoufle comme un boomerang ?',o:['Cendrillon','Blanche-Neige','la Belle','Aurora'],n:'La chaussure la plus polyvalente du royaume.'},
- {t:'Comment Charming piège-t-il Shrek ?',o:['avec un faux spectacle de théâtre','un duel à l’aube','un banquet','un tournoi'],n:'Le théâtre dans le théâtre.'},
- {t:'Qu’arrive-t-il à Charming sur scène ?',o:['un décor s’effondre sur lui','il oublie son texte','il est mangé','il s’enfuit'],n:'Le mât du navire décoratif fait des dégâts.'},
- {t:'Comment Artie touche-t-il les méchants ?',o:['un discours sur leurs blessures d’enfance','en les achetant','en les battant','en appelant les gardes'],n:'Thérapie de groupe inattendue.'},
- {t:'Dans Shrek 4, quel anniversaire tourne mal ?',o:['celui des triplés','celui de Fiona','le couronnement','celui de l’Âne'],n:'Torture chantée et gâteau écrasé.'},
- {t:'Que réclame le petit garçon à Shrek ?',o:['« Fais le rugissement »','un gâteau','un autographe','« fais la poule »'],n:'Encore, encore et encore.'},
- {t:'Que veut Shrek juste avant le contrat ?',o:['un jour comme un vrai ogre redoutable','redevenir humain','être roi','quitter Fiona'],n:'Il regrette sa vie « d’avant ».'},
- {t:'Qui signe le contrat avec Rumpel ?',o:['Shrek','Fiona','l’Âne','Harold'],n:'Sans lire les petites lignes.'},
- {t:'Que devient Rumpelstiltskin dans le monde alternatif ?',o:['le roi tout-puissant','un fermier','un prisonnier','le majordome'],n:'Il règne sur un monde sans Shrek.'},
- {t:'Dans le monde alternatif, comment est l’Âne ?',o:['timide et docile','féroce et gros','roi du marais','disparu'],n:'Un âne de trait qui n’ose presque pas parler.'},
- {t:'Dans le monde alternatif, comment est le Chat Potté ?',o:['gros et paresseux','minuscule','guerrier','roi'],n:'Un matou de salon en surpoids.'},
- {t:'Qui fait danser les ogres pour les capturer ?',o:['le Joueur de flûte de Hamelin','Merlin','Rumpel lui-même','le Chat'],n:'La flûte ne pardonne pas.'},
- {t:'Comment le monde alternatif s’efface-t-il ?',o:['par le baiser de Fiona','par un sort de Merlin','Rumpel demande pardon','par la fée'],n:'Le baiser d’amour vrai brise tout.'},
- {t:'Que devient Rumpel à la fin ?',o:['arrêté et puni','roi pour toujours','riche et en fuite','ogre'],n:'Il finit en cage, et ça lui va bien.'},
- {t:'Quelle leçon Shrek retient-il ?',o:['apprécier sa famille','devenir roi','fuir le marais','tout garder pour lui'],n:'La morale classique du film.'},
- {t:'Qui est le héros du film solo de 2011 ?',o:['le Chat Potté','Gingy','l’Âne','Merlin'],n:'Son origin story, enfin.'},
- {t:'En quelle année le film du Chat Potté est-il sorti ?',o:['2011','2007','2013','2009'],n:'Six ans après Shrek 3.'},
- {t:'Qui est le camarade d’enfance trahi du Chat ?',o:['Humpty Dumpty','Pinocchio','Gingy','le loup'],n:'Un œuf très créatif.'},
- {t:'Que cherchent le Chat et Humpty ?',o:['les haricots magiques','la couronne','une potion','le trésor de Duloc'],n:'Plantés, ils mènent au géant.'},
- {t:'Qui est la partenaire féline du Chat ?',o:['Kitty Softpaws','la Dragonne','une panthère','Cendrillon'],n:'Des pattes de velours, des griffes d’acier.'},
- {t:'Qui sont les bandits du film du Chat ?',o:['Jack et Jill','Farquaad','Rumpel','Thelonious'],n:'Un duo de voleurs plutôt stupide.'},
- {t:'Quel animal pond les œufs d’or ?',o:['une oie','une poule','un canard','un cygne'],n:'La fameuse oie aux œufs d’or.'},
- {t:'Dans quel pays le Chat a-t-il grandi ?',o:['en Espagne','en France','en Italie','au Portugal'],n:'À San Ricardo, pour tout dire.'},
- {t:'Le Chat Potté parodie quel justicier masqué ?',o:['Zorro','Robin Hood','Batman','le Fantôme'],n:'Même posture d’escrime, même panache.'},
- {t:'Qui est la parodie de Robin Hood dans Shrek 1 ?',o:['Monsieur Hood','Thelonious','le Chat','Farquaad'],n:'Avec son accent et ses Merry Men.'},
- {t:'Comment Fiona terrasse Monsieur Hood ?',o:['d’un coup de pied aérien','à l’épée','avec un sort','en hurlant'],n:'Un arrêt sur image très Matrix.'},
- {t:'Qui est le bourreau silencieux de Farquaad ?',o:['Thelonious','Mongo','le loup','Géanto'],n:'Grand, muet, inquiétant.'},
- {t:'Qu’arrache-t-on à Gingy lors de l’interrogatoire ?',o:['ses jambes','ses bras','ses oreilles','son chapeau'],n:'Il sera recollé… en principe.'},
- {t:'Que crie Gingy pour sauver ses boutons ?',o:['« Pas les boutons de guimauve ! »','« Pas les miettes ! »','« Au secours ! »','« Pas mon chapeau ! »'],n:'Une réplique devenue culte.'},
- {t:'Que chante le pantin d’accueil de Duloc ?',o:['« Bienvenue à Duloc »','la Marseillaise','du heavy metal','rien'],n:'Une marionnette en bois qui lève le chapeau.'},
- {t:'Qui proclame « certains vont mourir, sacrifice que j’accepte » ?',o:['Farquaad','Shrek','Harold','Charming'],n:'Devant ses propres chevaliers. Charmant.'},
- {t:'« Mieux vaut dehors que dedans » — qui le dit ?',o:['l’Âne','Shrek','le Chat','Gingy'],n:'Une philosophie d’âne, sur les gaz.'},
- {t:'« Ce marais est à MOI » — qui hurle-t-il ?',o:['Shrek','Farquaad','l’Âne','Harold'],n:'La proclamation officielle, quatre films de suite.'},
- {t:'Où vivent les enfants de l’Âne et de la Dragonne ?',o:['au marais','à Duloc','au château','chez la fée'],n:'Ils ont envahi le marais de Shrek.'},
- {t:'Comment appelle-t-on les enfants mi-âne mi-dragon ?',o:['les Dronkeys','les Drânes','les Drakouns','les Baby-D'],n:'Dragon + Donkey = Dronkey.'},
- {t:'Quelle boisson la fée offre-t-elle à Fiona au bal ?',o:['un thé ensorcelé','du vin chaud','du jus magique','du lait de grenouille'],n:'Servi avec un sourire trop large.'},
- {t:'Quel est le titre français de Shrek Forever After ?',o:['Shrek 4 : Il était une fin','Shrek 4 : Il était une fois','Shrek : la fin','Shrek 4 : le contrat'],n:'Jeu de mots avec « il était une fois ».'},
- {t:'Quel est le titre français de Shrek the Third ?',o:['Shrek le Troisième','Shrek 3 : le retour du marais','Shrek roi','Shrek 3 : la couronne'],n:'Titre sobre, gags royaux.'},
- {t:'Qui double Fiona en version française ?',o:['Barbara Tissier','Marie Nonnenmacher','Barbara Kelsch','Ethel Houbiers'],n:'Une voix culte du doublage français.'},
- {t:'Quelle princesse est experte en arts martiaux ?',o:['Fiona','Cendrillon','Aurora','Blanche-Neige'],n:'Elle attendait un prince… et s’entraînait.'},
- {t:'Quelle est l’arme fétiche du Chat Potté ?',o:['son épée','son arc','sa fronde','ses poings'],n:'Rapière fine, style flamenco.'},
- {t:'Qui obtient le titre de « champion » après le tournoi de Duloc ?',o:['Shrek','Farquaad','l’Âne','Thelonious'],n:'Un titre qu’il a fallu négocier.'},
- {t:'Comment l’Âne gagne-t-il le cœur de la Dragonne ?',o:['par des compliments','par des carottes','en chantant','par un sort'],n:'« Tu es si belle quand tu fais des flammes. »'},
- {t:'Qu’arrive-t-il quand on coupe un oignon ?',o:['ça pique les yeux','ça chante','ça sent le sucre','rien'],n:'D’où la métaphore des couches.'},
- {t:'Qui est le « marchand de muffins » ?',o:['le pâtissier qui a fait Gingy','un héros de Duloc','un méchant','un ogre'],n:'Il connaît la comptine par cœur.'},
- {t:'Que demande Farquaad à Gingy ?',o:['où sont cachées les créatures','la recette du pain d’épices','de l’or','la carte du royaume'],n:'Un interrogatoire à la limite de l’humain.'},
- {t:'Comment Farquaad choisit-il son champion ?',o:['par un tournoi','par tirage au sort','par duel','au hasard'],n:'Le gagnant partira « sauver » Fiona.'},
- {t:'Combien de chevaliers Shrek affronte-t-il à la fois ?',o:['tous en même temps','un par un','trois','dix'],n:'Un seul ogre contre la ring entière.'},
- {t:'Que scande la foule après le combat de Shrek ?',o:['« Shrek ! Shrek ! »','« Farquaad ! »','« L’Âne ! »','« Allez les ogres ! »'],n:'Du catch pur, sans ceinture.'},
- {t:'Qui attend son sauveur à la fenêtre de la tour ?',o:['Fiona','Cendrillon','Aurora','Blanche-Neige'],n:'Pose de conte jusqu’à la déception.'},
- {t:'Que fait Fiona pour tuer le temps dans sa tour ?',o:['elle lit des livres de contes','elle danse','elle coud','elle pleure'],n:'Elle a fini par en connaître les faiblesses.'},
- {t:'Qui prête sa voix EN à Fiona ?',o:['Cameron Diaz','Julia Roberts','Sandra Bullock','Angelina Jolie'],n:'La princesse la plus badass du casting.'},
- {t:'Qui prête sa voix EN au Chat Potté ?',o:['Antonio Banderas','Javier Bardem','Gael García Bernal','Benicio del Toro'],n:'C’est son accent qui a tout créé.'},
- {t:'Quel prix Shrek remporte-t-il en 2002 ?',o:['l’Oscar du meilleur film d’animation','la Palme d’or','un César','le Grammy'],n:'Le tout premier de la catégorie.'},
- {t:'En quelle année Shrek 2 est-il sorti ?',o:['2004','2002','2006','2008'],n:'Le plus gros succès de la saga pendant des années.'},
- {t:'En quelle année Shrek le Troisième est-il sorti ?',o:['2007','2005','2009','2010'],n:'L’ère des princesses en colère.'},
- {t:'En quelle année Shrek 4 est-il sorti ?',o:['2010','2008','2012','2013'],n:'Pensé comme le « vrai » final.'},
- {t:'Shrek est une parodie de quel univers ?',o:['les contes de fées','les super-héros','Star Wars','le western'],n:'Du conte Disney légèrement salade.'},
- {t:'Quel conte inspire l’intrigue de Shrek 2 ?',o:['Cendrillon (minuit et transformations)','le Petit Chaperon rouge','Hansel et Gretel','la Belle au bois dormant'],n:'Potion, minuit, baiser : tout y est.'},
- {t:'Quel conte inspire Shrek 4 ?',o:['Rumpelstiltskin','le Petit Poucet','la Reine des neiges','Jack et le haricot'],n:'Le nain qui devine les noms.'},
- {t:'Quel conte inspire le film du Chat Potté ?',o:['Jack et les haricots magiques','Cendrillon','le Loup et l’agneau','Ali Baba'],n:'Haricots, géant, oie aux œufs d’or.'},
- {t:'Qui est Mongo ?',o:['un géant en pain d’épices','un ogre','un chevalier','un dragon'],n:'Gingy version XXL.'},
- {t:'Qui fabrique Mongo ?',o:['le marchand de muffins','Gingy seul','la fée Carabosse','Merlin'],n:'La comptine, c’est lui.'},
- {t:'Quel objet la fée brandit-elle en chantant ?',o:['sa baguette magique','une épée','un micro','son chapeau'],n:'Des effets pyrotechniques sur la baguette.'},
- {t:'Comment s’appelle le bar des méchants ?',o:['la Pomme Empoisonnée','le Chaudron','le Goblet d’or','la Citrouille'],n:'Référence directe à Blanche-Neige.'},
- {t:'Qui fréquente la Pomme Empoisonnée ?',o:['les méchants de contes','les princesses','les ogres','les chevaliers'],n:'Le bar le plus sinistre du royaume.'},
- {t:'Que porte le Chat Potté sur la tête ?',o:['un chapeau à plume','une couronne','un casque','un bandana'],n:'Une plume, forcément.'},
- {t:'Qui est l’épouse de l’Âne ?',o:['la Dragonne','Cendrillon','Fiona','une jument'],n:'Le couple le plus improbable du cinéma.'},
- {t:'Que souhaite l’Âne après avoir bu la potion ?',o:['rester étalon','redevenir âne','devenir chevalier','apprendre à voler'],n:'Il ne veut JAMAIS reprendre sa forme d’origine.'},
- {t:'Que devient l’Âne à la fin de Shrek 2 ?',o:['il redevient âne','il reste étalon','il devient licorne','il reste humain'],n:'La magie s’annule avec le sort.'},
- {t:'Comment voyage le couple vers Fort Fort Lointain ?',o:['en carrosse','à dos de dragon','à pied','en bateau'],n:'L’Âne râle pendant tout le trajet.'},
- {t:'Quelle est la réaction de la reine Lillian face à Shrek ?',o:['compréhensive','hostile','indifférente','effrayée'],n:'Elle défend le choix de sa fille.'},
- {t:'Qui attaque Shrek dans la forêt avec son épée ?',o:['le Chat Potté','Harold','Charming','Thelonious'],n:'Un duel du plus bel effet… écourté.'},
- {t:'Comment le Chat se présente-t-il avant d’attaquer ?',o:['il se dresse sur ses pattes arrière','il hurle','il disparaît','il danse'],n:'Épée au poil, regard mi-clos.'},
- {t:'Que fabrique l’usine de la fée Carabosse ?',o:['des potions','des robes','des gâteaux','des balais'],n:'Une industrie de magie à la chaîne.'},
- {t:'Qui dirige l’usine de potions ?',o:['la fée Carabosse','un gnome','Harold','Charming'],n:'Elle supervise tout, à la baguette.'},
- {t:'Que déclenche le vol de la potion ?',o:['l’alarme de l’usine','une explosion','une pluie d’or','rien'],n:'Le trio s’enfuit en catastrophe.'},
- {t:'Qui attrape Shrek et ses amis après le vol ?',o:['les gardes de la fée','Harold','les ogres','les chevaliers de Duloc'],n:'Direction : les cachots royaux.'},
- {t:'Qui fait libérer le trio de prison ?',o:['le roi Harold','la fée Carabosse','Fiona','Charming'],n:'Il les fait libérer… puis avoue tout.'},
- {t:'Pourquoi Harold les libère-t-il ?',o:['des remords','la fée le force','Fiona menace','une erreur judiciaire'],n:'Il regrette son plan.'},
- {t:'Qu’avoue Harold à la fin de Shrek 2 ?',o:['qu’il est une grenouille','qu’il est un ogre','qu’il a tué Farquaad','qu’il a vendu le royaume'],n:'Le secret du roi, révélé devant tous.'},
- {t:'Quel accessoire Harold utilise-t-il pour bloquer le sort ?',o:['son plastron d’armure','un bouclier magique','un miroir','son sceptre'],n:'Le sort rebondit dessus.'},
- {t:'Qu’arrive-t-il à la fée Carabosse frappée par son propre sort ?',o:['elle explose en bulles','elle devient grenouille','elle s’évapore','elle fond'],n:'Une fin en mousse de savon.'},
- {t:'Qui embrasse Fiona à la fin de Shrek 2 ?',o:['Shrek','Charming','Harold','le Chat Potté'],n:'Elle retrouve sa forme ogre, et l’assume.'},
- {t:'Sous quelle forme Fiona choisit-elle de rester ?',o:['ogresse','humaine','fée','princesse humaine'],n:'« C’est moi, la vraie moi. »'},
- {t:'Qui protège Fiona dans Shrek 3 quand Shrek est parti ?',o:['les princesses','les cochons','les ogres','les nains'],n:'Une bande de princesses en mode commando.'},
- {t:'Quelle princesse brise un mur avec ses animaux ?',o:['Blanche-Neige','Cendrillon','Aurora','la Belle'],n:'Ses petits amis chantent et cassent tout.'},
- {t:'Quel objet sert d’arme boomerang ?',o:['la pantoufle de verre','la couronne','une assiette','une baguette'],n:'Lancer, ricochet, retour.'},
- {t:'Qui orchestre le faux « Shrek le musical » ?',o:['Charming','Merlin','Rumpel','Harold'],n:'Un piège déguisé en spectacle.'},
- {t:'Quel rôle joue Charming dans son propre spectacle ?',o:['le prince sauveur','l’ogre','le roi','le bouffon'],n:'Il se met en scène, forcément.'},
- {t:'Qui vient sauver Shrek pendant la pièce ?',o:['Fiona et les princesses','l’Âne seul','Harold','le Miroir'],n:'Entrée en scène de l’escouade princesses.'},
- {t:'Que devient Arthur à la fin de Shrek 3 ?',o:['roi','ogre','chevalier','magicien'],n:'Un roi qui parle aux gens. Révolutionnaire.'},
- {t:'Que veut Shrek au début de Shrek 3 ?',o:['revenir vivre au marais','être roi','conquérir Duloc','partir en guerre'],n:'La vie royale ne lui va pas.'},
- {t:'Pourquoi Shrek part-il chercher Arthur ?',o:['trouver l’héritier du trône','fuir Fiona','devenir roi','chasser Charming'],n:'Un roi, ça ne meurt pas sans héritier.'},
- {t:'Quand Fiona annonce-t-elle sa grossesse ?',o:['juste avant le départ de Shrek','après la bataille','par lettre','dans un songe'],n:'Au moment du départ du bateau, pile.'},
- {t:'De quoi Shrek fait-il des cauchemars ?',o:['d’une marée de bébés','de dragons','de Charming couronné','de la tour'],n:'Une horde de petits ogres rien que pour lui.'},
- {t:'Sur quoi naviguent-ils pour rejoindre l’académie ?',o:['un navire','un carrosse','une licorne','à pied'],n:'Mal de mer pour tous.'},
- {t:'Quel élève recrute-t-on malgré lui ?',o:['Arthur','Lancelot','Guenièvre','Perceval'],n:'Il apprend sa « promotion » par chantage affectueux.'},
- {t:'Qui réconforte Artie quand il doute ?',o:['Shrek','Merlin','Fiona','l’Âne'],n:'Un oncle-by-marriage tout en sarcasme.'},
- {t:'Qui se range du bon côté grâce au discours d’Artie ?',o:['les méchants de contes','les chevaliers','les ogres','les dragons'],n:'Tout le monde a une histoire triste.'},
- {t:'Comment Shrek 3 se termine-t-il ?',o:['par la naissance des triplés','par un mariage','par un couronnement','par un duel'],n:'Trois petits ogres pour la route.'},
- {t:'Qui exige « Fais le rugissement » ?',o:['un petit garçon','l’Âne','Gingy','un ogre'],n:'Le pire voisin de fête du monde.'},
- {t:'Que fait Shrek avant de signer le contrat ?',o:['il claque la porte de la fête','il danse','il s’excuse','il embrasse Fiona'],n:'Rage pure, signature immédiate.'},
- {t:'Dans quel film le Chat Potté apparaît-il pour la première fois ?',o:['Shrek 2','Shrek','Shrek le Troisième','son propre film'],n:'Embauché pour tuer Shrek. Ça ne s’est pas passé comme prévu.'}
+{t:'Où Shrek habite-t-il, au juste ?',o:['Dans un marais','Dans une grotte','Dans un château','Sur une île']},
+{t:'Le meilleur pote de Shrek, celui qui ne se tait jamais ?',o:['L’Âne','Le Chat Potté','Gingy','Pinocchio']},
+{t:'Shrek dit que les ogres, c’est comme les oignons. Pourquoi ?',o:['Ils ont des couches','Ils font pleurer','Ils puent','Ils se gardent longtemps']},
+{t:'Quelle princesse Shrek part délivrer ?',o:['Fiona','Cendrillon','Blanche-Neige','Aurora']},
+{t:'Qui garde la tour de Fiona ?',o:['Une dragonne','Un cyclope','Un géant','Un basilic']},
+{t:'Le petit bonhomme en pain d’épices, c’est…',o:['Gingy','Croquant','Biscotto','Cookie']},
+{t:'Le méchant du premier Shrek ?',o:['Lord Farquaad','Rumpelstiltskin','Le Prince Charmant','La fée Carabosse']},
+{t:'La ville parfaite de Farquaad s’appelle…',o:['Duloc','Fort Fort Lointain','Camelot','Maraisville']},
+{t:'Le royaume des parents de Fiona ?',o:['Fort Fort Lointain','Duloc','Lointainville','Camelot']},
+{t:'Le père de Fiona, c’est…',o:['Le roi Harold','Le roi Henri','Le roi Léon','Le roi Arthur']},
+{t:'La mère de Fiona ?',o:['La reine Lillian','La fée Carabosse','La reine Mab','Dame Gwen']},
+{t:'Le chat qui débarque dans Shrek 2 ?',o:['Le Chat Potté','Felix','Le Chat du Cheshire','Grosminet']},
+{t:'La fée qui manipule tout le monde dans Shrek 2 ?',o:['La fée Carabosse','La fée Clochette','Maléfique','La bonne fée']},
+{t:'Le Prince Charmant, c’est le fils de qui ?',o:['La fée Carabosse','La reine Lillian','La Belle au bois dormant','Personne, il est né comme ça']},
+{t:'Le grand méchant de Shrek 4 ?',o:['Rumpelstiltskin','Le Prince Charmant','Farquaad','Thelonious']},
+{t:'Le loup qui traîne au marais ?',o:['Le Grand Méchant Loup','Fenrir','Le loup de Gubbio','Loupio']},
+{t:'Le pantin dont le nez s’allonge ?',o:['Pinocchio','Gingy','Le Miroir','L’Âne']},
+{t:'Combien de petits cochons au marais ?',o:['Trois','Deux','Quatre','Sept']},
+{t:'Combien de souris aveugles ?',o:['Trois','Deux','Cinq','Quatre']},
+{t:'Le miroir qui parle à Farquaad ?',o:['Le Miroir Magique','Miro-Miro','Le Reflet','Speculo']},
+{t:'La Dragonne craque pour qui ?',o:['L’Âne','Shrek','Farquaad','Le Chat Potté']},
+{t:'Qui meurt au début de Shrek 3 ?',o:['Le roi Harold','Le roi Arthur','Le roi Henri','Le roi Léon']},
+{t:'Qui doit hériter du trône dans Shrek 3 ?',o:['Arthur','Shrek','Le Chat Potté','Charming']},
+{t:'Le surnom d’Arthur ?',o:['Artie','Ari','Tutur','Warty']},
+{t:'Le magicien à la retraite qui aide la bande ?',o:['Merlin','Gandalf','Oz','Prospero']},
+{t:'Le méchant de Shrek le Troisième ?',o:['Le Prince Charmant','Farquaad','Rumpelstiltskin','Mongo']},
+{t:'Ce que le Chat Potté porte aux pattes ?',o:['Des bottes','Des chaussettes','Des sandales','Des patins']},
+{t:'Fiona devient ogresse quand ?',o:['Chaque nuit','Chaque matin','Quand elle ment','À la pleine lune']},
+{t:'Quel baiser brise la malédiction de Fiona ?',o:['Le baiser d’amour vrai','Le baiser de minuit','Celui d’une fée','Sept baisers royaux']},
+{t:'Farquaad fait quoi des créatures magiques ?',o:['Il les expulse vers le marais de Shrek','Il les emprisonne à vie','Il les vend','Il les apprivoise']},
+{t:'Fiona est enfermée où ?',o:['Dans la tour la plus haute','Dans un cachot','Dans une cave','Dans une cage dorée']},
+{t:'La potion que Shrek vole dans Shrek 2 ?',o:['« Heureux pour toujours »','« Amour éternel »','« Force de géant »','« Invisibilité »']},
+{t:'La potion fait quoi à Shrek ?',o:['Il devient un beau prince','Il devient un géant','Il devient invisible','Il devient dragon']},
+{t:'Et à l’Âne ?',o:['Un étalon blanc majestueux','Un poney rose','Un chat noir','Une licorne']},
+{t:'La vraie forme du roi Harold ?',o:['Une grenouille','Une rainette','Un crapaud','Un lézard']},
+{t:'Dans quel film Fiona attend un bébé ?',o:['Shrek le Troisième','Shrek 2','Shrek 4','Shrek']},
+{t:'Combien de bébés à la fin ?',o:['Des triplés','Des jumeaux','Un seul','Des quadruplés']},
+{t:'Le métier raté du Prince Charmant dans Shrek 3 ?',o:['Acteur de théâtre ambulant','Roi','Cuisinier','Bouffon']},
+{t:'Qui rassemble les méchants dans Shrek 3 ?',o:['Le Prince Charmant','Farquaad','Rumpelstiltskin','Thelonious']},
+{t:'Shrek promet quoi à Rumpel ?',o:['Le jour de sa naissance','Son marais','Sa couronne','Son épouse']},
+{t:'Le contrat efface quoi ?',o:['Le jour de naissance de Shrek','Tout le royaume','Fiona','Le marais']},
+{t:'Dans le monde alternatif, qui mène les ogres rebelles ?',o:['Fiona','Rumpel','Le Chat Potté','Farquaad']},
+{t:'Comment le contrat de Shrek 4 est annulé ?',o:['Par un baiser d’amour vrai','En le brûlant','Par un sort de Merlin','En le déchirant']},
+{t:'Le premier film sort en quelle année ?',o:['2001','1998','2004','2006']},
+{t:'Quel studio fait Shrek ?',o:['DreamWorks','Pixar','Disney','Ghibli']},
+{t:'Combien de films principaux ?',o:['Quatre','Trois','Cinq','Deux']},
+{t:'Qui double Shrek en VF ?',o:['Alain Chabat','Gad Elmaleh','Jamel Debbouze','Jean Reno']},
+{t:'L’Âne en VO, c’est qui ?',o:['Eddie Murphy','Will Smith','Kevin Hart','Chris Rock']},
+{t:'La chanson qui ouvre le premier film ?',o:['« All Star »','« I’m a Believer »','« Hallelujah »','« Accidentally in Love »']},
+{t:'Qui reprend « I’m a Believer » au générique ?',o:['Smash Mouth','The Monkees','Queen','The Beatles']},
+{t:'La chanson de Counting Crows dans Shrek 2 ?',o:['« Accidentally in Love »','« Mr. Jones »','« Big Yellow Taxi »','« Colorblind »']},
+{t:'Qui chante « Holding Out for a Hero » au bal ?',o:['La fée Carabosse','Fiona','La reine Lillian','Blanche-Neige']},
+{t:'Le tube de Ricky Martin à la fin de Shrek 2 ?',o:['« Livin’ la Vida Loca »','« María »','« She Bangs »','« La Copa de la Vida »']},
+{t:'« Hallelujah », c’est écrit par qui ?',o:['Leonard Cohen','Bob Dylan','Johnny Cash','Elvis Presley']},
+{t:'La douche de Shrek au début, c’est où ?',o:['Dans la boue du marais','Sous une cascade','Dans un bain moussant','Dans la rivière']},
+{t:'Ce que Shrek peint sur son panneau ?',o:['« Attention ogre »','« À vendre »','« Marais privé »','« Danger loup »']},
+{t:'L’oiseau qui chante avec Fiona, il finit comment ?',o:['Il explose','Il s’évanouit','Il s’envole','Il chante mieux']},
+{t:'Le dîner romantique de Shrek et Fiona ?',o:['Un rat des marais grillé','Du poulet rôti','Une soupe à l’oignon','Des champignons farcis']},
+{t:'Shrek gagne le tournoi de Duloc comment ?',o:['En faisant du catch','À l’archerie','À la joute','Aux échecs']},
+{t:'Shrek demande quoi en échange de Fiona ?',o:['Son marais','La couronne','De l’or','Un titre de chevalier']},
+{t:'Qui avale Farquaad à la fin ?',o:['La Dragonne','Shrek','Les cochons','Fiona']},
+{t:'La Dragonne recrache quoi de Farquaad ?',o:['Sa couronne','Ses bottes','Son épée','Son cheval']},
+{t:'Shrek et Fiona se marient où ?',o:['Dans le marais','À Duloc','Au château royal','Dans une cathédrale']},
+{t:'La chanson de la fin du premier film ?',o:['« I’m a Believer »','« All Star »','« Happy Together »','« Hallelujah »']},
+{t:'Combien de prétendantes le Miroir montre à Farquaad ?',o:['Trois','Deux','Quatre','Cinq']},
+{t:'Laquelle n’est PAS proposée par le Miroir ?',o:['La Belle au bois dormant','Cendrillon','Blanche-Neige','Fiona']},
+{t:'Farquaad choisit sa femme avec quoi ?',o:['Un miroir magique','Une boule de cristal','Une baguette','Un livre de sorts']},
+{t:'On atteint la tour de Fiona comment ?',o:['Par un pont de cordes branlant','Par un pont-levis','En volant','Par un tunnel']},
+{t:'L’arme fatale du Chat Potté ?',o:['Ses yeux tout doux','Son ronronnement','Sa vitesse','Ses griffes']},
+{t:'Le Chat tousse quoi, à chaque fois ?',o:['Une boule de poils','De la poussière','Des plumes','Des bulles']}
 ],
 medium:[
- {t:'Pourquoi l’Âne fuit-il au début du film ?',o:['une vieille femme voulait le vendre','il a perdu un pari','il a volé des carottes','il chassait les mouches'],n:'Vendu comme « âne parlant », il s’est fait la malle.'},
- {t:'Sous quelle forme télévisée le Miroir présente-t-il les prétendantes ?',o:['un jeu de rencontre','un talk-show','un journal télé','une série'],n:'Parodie de The Bachelor.'},
- {t:'Quelle est la prétendante n°1 du Miroir ?',o:['Cendrillon','Fiona','la Belle au bois','Aurora'],n:'La n°2 est Blanche-Neige, la n°3 Fiona.'},
- {t:'Quelle plaisanterie accompagne Blanche-Neige chez le Miroir ?',o:['elle vit avec sept hommes','elle mange des pommes','elle dort debout','elle parle aux loups'],n:'« Elle vit avec sept autres hommes. »'},
- {t:'Quelle chanson punk accompagne le tournoi de Duloc ?',o:['« Bad Reputation » de Joan Jett','« Eye of the Tiger »','« We Will Rock You »','« Thunderstruck »'],n:'Le montage de combat en slow-motion.'},
- {t:'Que fabrique Fiona avec des serpents ?',o:['des sculptures de ballons','un lasso','une couronne','une soupe'],n:'Gonflées en animaux de ballon, très con.'},
- {t:'Comment Fiona prépare-t-elle l’œuf du matin ?',o:['en le cuisinant après avoir fait exploser l’oiseau','au soleil','avec un sort de fée','en le donnant à l’Âne'],n:'Le duet de chant a eu des conséquences.'},
- {t:'Comment l’Âne découvre-t-il le secret de Fiona ?',o:['il la voit se transformer la nuit','une lettre lui apprend','Shrek le lui dit','le miroir le montre'],n:'Il tombe dessus au mauvais moment.'},
- {t:'Que comprend Shrek à tort en écoutant le balcon ?',o:['que Fiona le juge monstrueux','qu’elle aime Farquaad','qu’elle est maudite','qu’elle s’enfuit'],n:'« Un monstre laid » désignait Farquaad.'},
- {t:'Qui Fiona croyait-elle devoir l’embrasser ?',o:['son sauveur, Farquaad','Shrek','le Chat','un prince inconnu'],n:'Elle attendait le baiser de son « sauveur ».'},
- {t:'Que fait la Dragonne de l’Âne capturé ?',o:['elle le courtise','elle le jette dans le vide','elle le vend','elle le coud dans un coffre'],n:'Amour immédiat et non négociable.'},
- {t:'Quel est le plan de Farquaad pour devenir roi ?',o:['épouser une princesse','tuer le roi','acheter la couronne','vaincre un dragon'],n:'Il n’est pas royal : il faut une princesse.'},
- {t:'Comment Farquaad a-t-il fait bâtir Duloc ?',o:['une ville parfaite et stérile','un château de cartes','un volcan aménagé','une cabane géante'],n:'Une maquette géante habitable.'},
- {t:'À quel lieu de divertissement Duloc ressemble-t-il ?',o:['à un parc d’attractions','à un casino','à un musée','à un stade'],n:'Parking, file d’attente, marionnettes chantantes.'},
- {t:'Que fait l’Âne avec les marionnettes de Duloc ?',o:['il chante avec elles','il les détruit','il les vole','il les mange'],n:'Il connaît les paroles mieux qu’elles.'},
- {t:'À quoi s’attend Fiona à sa délivrance ?',o:['à un prince charmant en armure','à un ogre','à une fée','à rien'],n:'Elle a révisé ses contes… trop bien.'},
- {t:'Comment l’Âne réagit-il à la forme ogre de Fiona ?',o:['il l’accepte aussitôt','il fuit','il hurle','il l’attaque'],n:'« Mais non, c’est cool ! »'},
- {t:'Quels gestes Shrek imite-t-il au tournoi ?',o:['ceux des catcheurs','des samouraïs','des gladiateurs','des chevaliers d’Arthur'],n:'Bell, slam, et affichage du nom.'},
- {t:'Comment Farquaad réagit-il au refus de Fiona ?',o:['il l’embarque de force','il la libère','il pleure','il annule le mariage'],n:'Le mariage aura lieu, qu’elle le veuille ou non.'},
- {t:'Où Farquaad célèbre-t-il son mariage ?',o:['à Duloc','au marais','dans la tour','au volcan'],n:'Une cérémonie à sa gloire, évidemment.'},
- {t:'Que se passe-t-il au coucher du soleil pendant la cérémonie ?',o:['la transformation de Fiona est révélée à tous','une éclipse','la fée arrive','le dragon attaque'],n:'Le secret de Fiona explose en public.'},
- {t:'Comment la Dragonne met-elle fin au mariage ?',o:['elle avale Farquaad','elle brûle Duloc','elle s’envole','elle chante'],n:'Entrée fracassante par la verrière.'},
- {t:'Quelle est la toute première scène du film ?',o:['Shrek sort de sa outhouse sur « All Star »','un mariage','Farquaad torture Gingy','un conte raconté'],n:'Wc, boue, panneau « Attention ogre ».'},
- {t:'Quelle est la deuxième scène du film ?',o:['Farquaad torture Gingy','la tour de Fiona','Duloc','le tournoi'],n:'Interrogatoire avec miettes en jeu.'},
- {t:'Où les créatures magiques sont-elles déversées ?',o:['dans le marais de Shrek','à Duloc','en prison','dans la forêt'],n:'Par paquets de charrette.'},
- {t:'Pourquoi Shrek se rend-il à Duloc ?',o:['pour récupérer son marais','pour tuer Farquaad','pour devenir chevalier','pour trouver l’amour'],n:'Rendre ce qui lui appartient.'},
- {t:'Que voit-on sur la place de Duloc ?',o:['un parking et des fontaines','un volcan','un marché magique','des dragons enchaînés'],n:'Le « parfait petit royaume ».'},
- {t:'Quel accent le Chat Potté a-t-il ?',o:['espagnol','français','anglais','italien'],n:'Antonio Banderas, tout simplement.'},
- {t:'Pourquoi Harold déteste-t-il Shrek dès le premier regard ?',o:['sa fille est devenue ogresse et il n’est pas un prince','il est pauvre','il est laid','il a volé'],n:'Deux raisons, un dîner catastrophe.'},
- {t:'Que fait Harold après le dîner désastreux ?',o:['il appelle la fée Carabosse','il déclare la guerre','il s’excuse','il enferme Fiona'],n:'Un appel à l’ancienne fée marraine.'},
- {t:'Quel lien unie Harold et la fée Carabosse ?',o:['elle est sa fée marraine','sa mère','sa sœur','sa chef'],n:'Elle a tout arrangé pour lui, autrefois.'},
- {t:'Quel lien unie la fée Carabosse et Charming ?',o:['elle est sa mère','sa sœur','sa servante','sa tante'],n:'Maman-gestionnaire de carrière.'},
- {t:'Quel marché Harold a-t-il conclu avec la fée ?',o:['sa forme humaine contre le mariage Fiona–Charming','de l’or contre la paix','un dragon contre un château','rien du tout'],n:'Le prix de sa couronne.'},
- {t:'Pourquoi Charming n’a-t-il pas sauvé Fiona ?',o:['il est arrivé trop tard','il a eu peur','il s’est perdu','il était en concert'],n:'Fiona était déjà délivrée… et partie.'},
- {t:'Qui logeait dans le lit de la tour à l’arrivée de Charming ?',o:['le Grand Méchant Loup','Shrek','la Dragonne','Pinocchio'],n:'« C’est pas ici que ça se passe. »'},
- {t:'Comment Puss se présente-t-il à Shrek ?',o:['un chasseur de primes envoyé par Harold','un ami de l’Âne','un chevalier errant','un roi'],n:'Un contrat à honorer… en théorie.'},
- {t:'Comment le Chat devient-il allié du couple ?',o:['il échoue et se rend','Shrek l’achète','la fée l’envoie espionner','il perd un pari'],n:'Boule de poils, aveu, alliance.'},
- {t:'Qu’indique l’étiquette de la potion ?',o:['baiser d’amour vrai avant minuit pour un effet permanent','une goutte suffit à jamais','danger d’explosion','réservé aux fées'],n:'Cendrillon, mais version ogre.'},
- {t:'Comment la fée réagit-elle au vol de sa potion ?',o:['furieuse, elle fait arrêter les voleurs','elle rit','elle ignore tout','elle offre un rabais'],n:'Le trio finit en cachot.'},
- {t:'Quel mensonge Charming raconte-t-il à Fiona ?',o:['qu’il est Shrek transformé','qu’il est roi','qu’il a tué la dragonne','qu’il est le Chat'],n:'Le grand mensonge du bal.'},
- {t:'Comment Shrek découvre-t-il la supercherie ?',o:['il surprend la fée et Charming','l’Âne le lui dit','Fiona le lui dit','le roi avoue'],n:'Il les entend comploter au bal.'},
- {t:'Qui vole la potion corrective au bal ?',o:['l’Âne et le Chat','Shrek seul','Fiona','Gingy'],n:'Mission au cœur de la soirée.'},
- {t:'Que fait la fée Carabosse au bal ?',o:['elle chante « Holding Out for a Hero »','elle danse seule','elle présente le roi','elle distribue des cadeaux'],n:'Un show pyrotechnique complet.'},
- {t:'À quoi la scène du bal ressemble-t-elle ?',o:['à un grand concert spectaculaire','à une messe','à un cirque','à un tournoi'],n:'Scène, laser, et deux cents danseurs.'},
- {t:'Que tente Mongo sur le château ?',o:['d’ouvrir la grande porte','d’envoyer un signal','de voler la couronne','de sauver Gingy'],n:'Il faut juste pousser… et fondre.'},
- {t:'Qu’est-ce qui arrête Mongo ?',o:['les douves qui le font fondre','des flèches','un sort du roi','la fée'],n:'L’eau, l’ennemie des cookies géants.'},
- {t:'Qui guide Mongo pendant l’assaut ?',o:['Gingy sur son épaule','l’Âne','Shrek','la fée'],n:'Un petit bonhomme sur un grand cookie.'},
- {t:'Quelle échéance menace le plan du bal ?',o:['minuit','midi','l’aube','six heures'],n:'Tout doit se jouer avant minuit.'},
- {t:'Que fait Harold au moment du baiser fatal ?',o:['il s’interpose et bloque le sort','il applaudit','il s’enfuit','il danse'],n:'Son plastron renvoie la magie.'},
- {t:'Quelle révélation Harold fait-il au couple ?',o:['qu’il est une grenouille transformée','qu’il a tué Farquaad','qu’il est un ogre','qu’il a signé avec Rumpel'],n:'Le prince-grenouille, tout y est.'},
- {t:'Que fait Charming à la fin de Shrek 2 ?',o:['il s’enfuit humilié','il devient roi','il épouse Fiona','il reste prisonnier'],n:'Une fuite qui prépare sa revanche.'},
- {t:'Qui convoque le couple à Fort Fort Lointain ?',o:['la lettre d’invitation royale','la fée','l’Âne','Charming'],n:'« Le bal de noces vous attend. »'},
- {t:'Quelle est la première corvée royale de Shrek dans Shrek 3 ?',o:['les obligations cérémonielles','la chasse','la guerre','les impôts'],n:'Rubans, discours, sourires forcés.'},
- {t:'Comment Harold meurt-il ?',o:['il coasse une dernière fois','il tombe de la tour','il est mangé','il part en voyage'],n:'Mort de grenouille, très onirique.'},
- {t:'Qui annonce sa grossesse à Shrek ?',o:['Fiona','Lillian','l’Âne','Merlin'],n:'Juste avant qu’il ne s’en aille.'},
- {t:'Qui accompagne Shrek chercher l’héritier ?',o:['l’Âne et le Chat','Gingy','Fiona','le Miroir'],n:'Le duo le plus bavard des mers.'},
- {t:'Quel talent caché d’Artie sauve la situation ?',o:['ses discours inspirants','le chant','le dessin','la magie'],n:'Un vrai meneur, malgré les moqueries.'},
- {t:'Comment Merlin décrit-il sa magie ?',o:['fait d’émotions comme l’amour et la peur','de mathématiques','de potions','de machines'],n:'« La magie, c’est de l’émotion. »'},
- {t:'Avec quoi Merlin effectue-t-il sa téléportation ?',o:['une séance avec des cristaux','un sort verbal','une baguette','un livre'],n:'Le résultat est… décalé.'},
- {t:'Combien de temps dure l’échange de corps Âne/Chat ?',o:['jusqu’à la fin du film','une heure','pour toujours','un jour'],n:'Ils redeviennent normaux à temps pour la fête.'},
- {t:'Où Fiona est-elle enfermée dans Shrek 3 ?',o:['dans les cachots du château','à Duloc','dans la tour','chez Merlin'],n:'Avec les princesses, en cellule commune.'},
- {t:'Qui libère les princesses ?',o:['elles-mêmes','Shrek','Harold','les cochons'],n:'Compétences de princesses, version survie.'},
- {t:'Comment Cendrillon récupère-t-elle sa pantoufle ?',o:['en la lançant comme un boomerang','la fée la lui ramène','l’Âne la rapporte','elle en refait une'],n:'Un accessoire étonnamment polyvalent.'},
- {t:'Quelle arme Charming brandit-il sur scène ?',o:['une épée','une hache','un chandelier','un gâteau'],n:'Le duel final devant le public.'},
- {t:'Quel est le but du faux spectacle de Charming ?',o:['tuer Shrek devant le public et régner','devenir acteur','faire rire','gagner de l’argent'],n:'Un régicide diffusé en direct.'},
- {t:'Qui redonne confiance à Artie ?',o:['Shrek','Merlin','Fiona','l’Âne'],n:'L’ogre qui disait qu’il valait mieux que ça.'},
- {t:'Quel est le lien de parenté entre Artie et Fiona ?',o:['des cousins (Artie est le neveu d’Harold)','frère et sœur','oncle et nièce','aucun'],n:'D’où l’héritage de la couronne.'},
- {t:'Pourquoi Shrek craque-t-il au début de Shrek 4 ?',o:['il ne se sent plus un vrai ogre redoutable','il déteste Fiona','il veut régner','il perd son marais'],n:'Il rêve de l’époque où on le craignait.'},
- {t:'Où réside Rumpel dans le monde alternatif ?',o:['au château royal','au marais','à Duloc','en forêt'],n:'Il a pris la place de toute la famille royale.'},
- {t:'Quel piège Rumpel tend-il aux ogres ?',o:['la musique du Joueur de flûte','un banquet','une fausse Fiona','un tournoi'],n:'Les ogres dansent… et se font encercler.'},
- {t:'Comment Shrek prouve-t-il son amour à Fiona dans l’alternatif ?',o:['il se livre à sa place','il chante','il lui offre le marais','il gagne un duel'],n:'Un sacrifice qui change tout.'},
- {t:'Pourquoi le premier baiser échoue-t-il ?',o:['Fiona ne l’aime pas encore dans ce monde','Shrek est humain','la fée l’annule','Rumpel l’empêche'],n:'Dans cette réalité, ils ne se connaissent pas.'},
- {t:'À quel moment Fiona embrasse-t-elle Shrek ?',o:['juste avant qu’il ne disparaisse','au début du jour','après le bal','au réveil'],n:'Au bout du compte à rebours.'},
- {t:'Comment se termine Shrek 4 ?',o:['la fête d’anniversaire est rejouée joyeuse','par un nouveau contrat','par un mariage','par un couronnement'],n:'Le même anniversaire, mais avec du cœur.'},
- {t:'Pourquoi le Chat Potté est-il fugitif dans son film ?',o:['il est devenu hors-la-loi à San Ricardo','il a volé la couronne','il a trahi le roi','il fuit Rumpel'],n:'Le héros local devenu bandit.'},
- {t:'Que trouve-t-on au sommet du haricot géant ?',o:['le château du géant','une tour','un palais royal','une outhouse'],n:'Et l’oie aux œufs d’or dedans.'},
- {t:'Qui garde le château des nuages ?',o:['un géant','la Dragonne','Rumpel','des golems'],n:'Il ne faut pas se faire repérer.'},
- {t:'Que trame Humpty au départ ?',o:['garder l’or pour lui','sauver le monde','épouser Kitty','tuer le Chat'],n:'Une amitié d’enfance aux télescopages.'},
- {t:'Que devient Humpty à la fin du film du Chat ?',o:['il survit, cassé mais vivant','il meurt','il devient géant','il devient roi'],n:'La coquille est fragile, pas le cœur.'},
- {t:'Avec qui le Chat danse-t-il un flamenco ?',o:['Kitty','Fiona','la Dragonne','une villageoise'],n:'Un duel de danse avant un duel d’épées.'},
- {t:'Quel est le dénouement de l’aventure du Chat ?',o:['l’oie d’or est rendue au géant','l’or est gardé','le château est détruit','Humpty part'],n:'La Petite Oie retrouve sa maman.'},
- {t:'Qui interprète à l’origine « Holding Out for a Hero » ?',o:['Bonnie Tyler','Tina Turner','Céline Dion','Whitney Houston'],n:'Tube 1984, recyclé en scène de bal.'},
- {t:'Qui a composé la musique des films Shrek ?',o:['Harry Gregson-Williams et John Powell','Hans Zimmer','Danny Elfman','Alan Menken'],n:'Le duo de « Chicken Run » et « X-Men ».'},
- {t:'Quel accent Mike Myers donne-t-il à Shrek ?',o:['écossais','anglais','américain','irlandais'],n:'Il l’a trouvé en testant plusieurs voix.'},
- {t:'Qui double la reine Lillian en anglais ?',o:['Julie Andrews','Judi Dench','Emma Thompson','Meryl Streep'],n:'Mary Poppins en reine.'},
- {t:'Qui double le roi Harold en anglais ?',o:['John Cleese','Rowan Atkinson','Hugh Laurie','Stephen Fry'],n:'Un Monty Python en monarque.'},
- {t:'Qui double la fée Carabosse en anglais ?',o:['Jennifer Saunders','Dawn French','Julie Walters','Joanna Lumley'],n:'La moitié du duo « Absolutely Fabulous ».'},
- {t:'Qui double le Prince Charmant en anglais ?',o:['Rupert Everett','Hugh Grant','Colin Firth','Jude Law'],n:'Le beau rival par excellence.'},
- {t:'Qui double Arthur en anglais ?',o:['Justin Timberlake','Zac Efron','Leonardo DiCaprio','Shia LaBeouf'],n:'Du pop-star au trône.'},
- {t:'Qui double Merlin en anglais ?',o:['Eric Idle','John Cleese','Robin Williams','Ian McKellen'],n:'Un autre Monty Python, en sorcier zen.'},
- {t:'Quel prix Shrek 1 remporte-t-il en 2002 ?',o:['l’Oscar du meilleur film d’animation','la Palme d’or','un César','le Grammy'],n:'Face à Monsters & Co et L’Âge de glace.'},
- {t:'Qui chante « Hallelujah » au générique du premier film ?',o:['Rufus Wainwright','Jeff Buckley','Leonard Cohen','John Cale'],n:'John Cale chante dans le film ; Wainwright au générique.'},
- {t:'Quel spécial TV de Noël existe-t-il ?',o:['Shrek the Halls','Shrekmas','Un Noël avec Shrek le film','Shrek Winter'],n:'Diffusé en 2007 sur ABC.'},
- {t:'Quel spécial d’Halloween existe-t-il ?',o:['Scared Shrekless','Shrekween','Shrek’s Fright Night','Shrek Horror Stories'],n:'Les personnages racontent des histoires effrayantes.'},
- {t:'Comment s’appelle la comédie musicale de Broadway ?',o:['Shrek The Musical','Shrek on Stage','Shrek le grand spectacle','Shrek Live'],n:'Créée en 2008 à Broadway.'},
- {t:'Qui a écrit le livre « Shrek ! » dont s’inspire le film ?',o:['William Steig','Maurice Sendak','Dr. Seuss','Roald Dahl'],n:'Un album illustré de 1990.'},
- {t:'Que signifie « Shrek » en yiddish ?',o:['effroi','ogre','ami','marais'],n:'Du germanique « Schreck » : la frayeur.'},
- {t:'Dans quelle attraction Farquaad réapparaît-il en fantôme ?',o:['Shrek 4-D','Le Tour de Duloc','Duloc 3D','Shrek Ride'],n:'L’attraction des parcs Universal, depuis 2003.'},
- {t:'Quel est le nom complet de Humpty Dumpty ?',o:['Humpty Alexandre Dumpty','Humpty Dumpty II','Alexandre le Gros','Humpty Scott'],n:'Un œuf à prétentions d’artiste.'},
- {t:'Comment s’appelle la ville d’origine du Chat Potté ?',o:['San Ricardo','San Puss','Valdoria','Santa Felya'],n:'La ville qui l’a honoré… puis chassé.'}
+{t:'Pourquoi l’Âne se sauve au début du film ?',o:['Une vieille femme voulait le vendre','Il a perdu un pari','Il a volé des carottes','Il chassait les mouches']},
+{t:'Le Miroir présente les prétendantes comme dans…',o:['Un jeu de rencontre télévisé','Un talk-show','Un journal télé','Une série']},
+{t:'La prétendante n°1 du Miroir ?',o:['Cendrillon','Fiona','La Belle au bois','Aurora']},
+{t:'La vanne du Miroir sur Blanche-Neige ?',o:['Elle vit avec sept hommes','Elle mange des pommes','Elle dort debout','Elle parle aux loups']},
+{t:'Le punk qui accompagne le tournoi de Duloc ?',o:['« Bad Reputation » de Joan Jett','« Eye of the Tiger »','« We Will Rock You »','« Thunderstruck »']},
+{t:'Fiona fabrique quoi avec des serpents ?',o:['Des sculptures de ballons','Un lasso','Une couronne','Une soupe']},
+{t:'L’œuf du matin, Fiona le cuisine comment ?',o:['Après avoir fait exploser l’oiseau','Au soleil','Avec un sort de fée','En le donnant à l’Âne']},
+{t:'L’Âne découvre le secret de Fiona comment ?',o:['Il la voit se transformer la nuit','Une lettre lui apprend','Shrek le lui dit','Le miroir le montre']},
+{t:'Shrek comprend quoi de travers sur le balcon ?',o:['Que Fiona le juge monstrueux','Qu’elle aime Farquaad','Qu’elle est maudite','Qu’elle s’enfuit']},
+{t:'Fiona croyait devoir embrasser qui ?',o:['Son sauveur, Farquaad','Shrek','Le Chat','Un prince inconnu']},
+{t:'La Dragonne fait quoi de l’Âne capturé ?',o:['Elle le courtise','Elle le jette dans le vide','Elle le vend','Elle l’enferme dans un coffre']},
+{t:'Le plan de Farquaad pour devenir roi ?',o:['Épouser une princesse','Tuer le roi','Acheter la couronne','Vaincre un dragon']},
+{t:'Duloc ressemble à quoi ?',o:['Un parc d’attractions','Un casino','Un musée','Un stade']},
+{t:'L’Âne fait quoi avec les marionnettes de Duloc ?',o:['Il chante avec elles','Il les détruit','Il les vole','Il les mange']},
+{t:'Fiona s’attend à quoi à sa délivrance ?',o:['Un prince charmant en armure','Un ogre','Une fée','Rien']},
+{t:'L’Âne réagit comment à la forme ogre de Fiona ?',o:['Il l’accepte aussitôt','Il fuit','Il hurle','Il l’attaque']},
+{t:'Farquaad réagit comment au refus de Fiona ?',o:['Il l’embarque de force','Il la libère','Il pleure','Il annule le mariage']},
+{t:'Farquaad célèbre son mariage où ?',o:['À Duloc','Au marais','Dans la tour','Au volcan']},
+{t:'Au coucher du soleil pendant la cérémonie, il se passe quoi ?',o:['La transformation de Fiona est révélée à tous','Une éclipse','La fée arrive','Le dragon attaque']},
+{t:'La Dragonne met fin au mariage comment ?',o:['Elle avale Farquaad','Elle brûle Duloc','Elle s’envole','Elle chante']},
+{t:'La toute première scène du film ?',o:['Shrek sort de sa outhouse sur « All Star »','Un mariage','Farquaad torture Gingy','Un conte raconté']},
+{t:'Juste après la première scène ?',o:['Farquaad torture Gingy','La tour de Fiona','Duloc','Le tournoi']},
+{t:'Les créatures magiques sont déversées où ?',o:['Dans le marais de Shrek','À Duloc','En prison','Dans la forêt']},
+{t:'Shrek va à Duloc pour quoi ?',o:['Récupérer son marais','Tuer Farquaad','Devenir chevalier','Trouver l’amour']},
+{t:'L’accent du Chat Potté ?',o:['Espagnol','Français','Anglais','Italien']},
+{t:'Pourquoi Harold déteste Shrek ?',o:['Sa fille est ogresse et Shrek n’est pas un prince','Il est pauvre','Il est laid','Il a volé']},
+{t:'Harold appelle qui après le dîner catastrophe ?',o:['La fée Carabosse','Le Miroir','Charming','Le capitaine des gardes']},
+{t:'La fée Carabosse, c’est quoi pour Harold ?',o:['Sa fée marraine','Sa mère','Sa sœur','Sa chef']},
+{t:'Et pour Charming ?',o:['Sa mère','Sa sœur','Sa servante','Sa tante']},
+{t:'Le marché Harold/fée ?',o:['Sa forme humaine contre le mariage Fiona–Charming','De l’or contre la paix','Un dragon contre un château','Rien du tout']},
+{t:'Pourquoi Charming n’a pas sauvé Fiona ?',o:['Il est arrivé trop tard','Il a eu peur','Il s’est perdu','Il était en concert']},
+{t:'Qui était dans le lit de la tour à l’arrivée de Charming ?',o:['Le Grand Méchant Loup','Shrek','La Dragonne','Pinocchio']},
+{t:'Le Chat se présente comme quoi ?',o:['Un chasseur de primes envoyé par Harold','Un ami de l’Âne','Un chevalier errant','Un roi']},
+{t:'Le Chat devient allié comment ?',o:['Il échoue et se rend','Shrek l’achète','La fée l’envoie espionner','Il perd un pari']},
+{t:'L’étiquette de la potion dit quoi ?',o:['Baiser d’amour vrai avant minuit pour un effet permanent','Une goutte suffit à jamais','Danger d’explosion','Réservé aux fées']},
+{t:'Charming raconte quoi à Fiona ?',o:['Qu’il est Shrek transformé','Qu’il est roi','Qu’il a tué la dragonne','Qu’il est le Chat']},
+{t:'Shrek découvre la supercherie comment ?',o:['Il surprend la fée et Charming','L’Âne le lui dit','Fiona le lui dit','Le roi avoue']},
+{t:'Qui vole la potion corrective au bal ?',o:['L’Âne et le Chat','Shrek seul','Fiona','Gingy']},
+{t:'Mongo tente quoi sur le château ?',o:['D’ouvrir la grande porte','D’envoyer un signal','De voler la couronne','De sauver Gingy']},
+{t:'Ce qui arrête Mongo ?',o:['Les douves qui le font fondre','Des flèches','Un sort du roi','La fée']},
+{t:'Qui guide Mongo pendant l’assaut ?',o:['Gingy sur son épaule','L’Âne','Shrek','La fée']},
+{t:'Harold fait quoi au moment du baiser fatal ?',o:['Il s’interpose et bloque le sort','Il applaudit','Il s’enfuit','Il danse']},
+{t:'Charming fait quoi à la fin de Shrek 2 ?',o:['Il s’enfuit humilié','Il devient roi','Il épouse Fiona','Il reste prisonnier']},
+{t:'La première corvée royale de Shrek dans Shrek 3 ?',o:['Les obligations cérémonielles','La chasse','La guerre','Les impôts']},
+{t:'Harold meurt comment ?',o:['Il coasse une dernière fois','Il tombe de la tour','Il est mangé','Il part en voyage']},
+{t:'Qui accompagne Shrek chercher l’héritier ?',o:['L’Âne et le Chat','Gingy','Fiona','Le Miroir']},
+{t:'Le talent caché d’Artie ?',o:['Ses discours inspirants','Le chant','Le dessin','La magie']},
+{t:'Merlin dit que la magie c’est quoi ?',o:['Des émotions comme l’amour et la peur','Des mathématiques','Des potions','Des machines']},
+{t:'La téléportation de Merlin rate comment ?',o:['L’Âne et le Chat échangent de corps','Ils rajeunissent','Ils s’évanouissent','Ils devinent l’avenir']},
+{t:'Fiona est enfermée où dans Shrek 3 ?',o:['Dans les cachots du château','À Duloc','Dans la tour','Chez Merlin']},
+{t:'Qui libère les princesses ?',o:['Elles-mêmes','Shrek','Harold','Les cochons']},
+{t:'Cendrillon récupère sa pantoufle comment ?',o:['En la lançant comme un boomerang','La fée la lui ramène','L’Âne la rapporte','Elle en refait une']},
+{t:'Le but du faux spectacle de Charming ?',o:['Tuer Shrek devant le public et régner','Devenir acteur','Faire rire','Gagner de l’argent']},
+{t:'Artie et Fiona, c’est quoi comme lien ?',o:['Des cousins (Artie est le neveu d’Harold)','Frère et sœur','Oncle et nièce','Aucun']},
+{t:'Shrek craque pourquoi au début de Shrek 4 ?',o:['Il ne se sent plus un vrai ogre redoutable','Il déteste Fiona','Il veut régner','Il perd son marais']},
+{t:'Le piège de Rumpel pour les ogres ?',o:['La musique du Joueur de flûte','Un banquet','Une fausse Fiona','Un tournoi']},
+{t:'Pourquoi le premier baiser échoue dans Shrek 4 ?',o:['Fiona ne l’aime pas encore dans ce monde','Shrek est humain','La fée l’annule','Rumpel l’empêche']},
+{t:'Shrek 4 se termine comment ?',o:['La fête d’anniversaire est rejouée joyeuse','Par un nouveau contrat','Par un mariage','Par un couronnement']},
+{t:'Le Chat est fugitif pourquoi dans son film ?',o:['Il est devenu hors-la-loi à San Ricardo','Il a volé la couronne','Il a trahi le roi','Il fuit Rumpel']},
+{t:'Au sommet du haricot géant ?',o:['Le château du géant','Une tour','Un palais royal','Une outhouse']},
+{t:'Humpty trame quoi au départ ?',o:['Garder l’or pour lui','Sauver le monde','Épouser Kitty','Tuer le Chat']},
+{t:'Humpty finit comment ?',o:['Il survit, cassé mais vivant','Il meurt','Il devient géant','Il devient roi']},
+{t:'Le Chat danse un flamenco avec qui ?',o:['Kitty','Fiona','La Dragonne','Une villageoise']},
+{t:'L’oie d’or finit comment ?',o:['Rendue au géant','Gardée par le Chat','Offerte à San Ricardo','En fuite']},
+{t:'« Holding Out for a Hero », c’est qui à l’origine ?',o:['Bonnie Tyler','Tina Turner','Céline Dion','Whitney Houston']},
+{t:'La musique des films, c’est qui ?',o:['Harry Gregson-Williams et John Powell','Hans Zimmer','Danny Elfman','Alan Menken']},
+{t:'L’accent que Mike Myers donne à Shrek ?',o:['Écossais','Anglais','Américain','Irlandais']},
+{t:'La reine Lillian en VO ?',o:['Julie Andrews','Judi Dench','Emma Thompson','Meryl Streep']},
+{t:'Le roi Harold en VO ?',o:['John Cleese','Rowan Atkinson','Hugh Laurie','Stephen Fry']},
+{t:'La fée Carabosse en VO ?',o:['Jennifer Saunders','Dawn French','Julie Walters','Joanna Lumley']},
+{t:'Le Prince Charmant en VO ?',o:['Rupert Everett','Hugh Grant','Colin Firth','Jude Law']},
+{t:'Arthur en VO ?',o:['Justin Timberlake','Zac Efron','Leonardo DiCaprio','Shia LaBeouf']},
+{t:'Merlin en VO ?',o:['Eric Idle','John Cleese','Robin Williams','Ian McKellen']},
+{t:'Qui chante « Hallelujah » au générique du premier ?',o:['Rufus Wainwright','Jeff Buckley','Leonard Cohen','John Cale']},
+{t:'Le spécial de Noël ?',o:['Shrek the Halls','Shrekmas','Un Noël avec Shrek le film','Shrek Winter']},
+{t:'Le spécial d’Halloween ?',o:['Scared Shrekless','Shrekween','Shrek’s Fright Night','Shrek Horror Stories']},
+{t:'La comédie musicale de Broadway ?',o:['Shrek The Musical','Shrek on Stage','Shrek le grand spectacle','Shrek Live']},
+{t:'Le livre « Shrek ! » est de qui ?',o:['William Steig','Maurice Sendak','Dr. Seuss','Roald Dahl']},
+{t:'« Shrek » en yiddish, ça veut dire quoi ?',o:['Effroi','Ogre','Ami','Marais']},
+{t:'Farquaad réapparaît en fantôme dans quelle attraction ?',o:['Shrek 4-D','Le Tour de Duloc','Duloc 3D','Shrek Ride']},
+{t:'La ville d’origine du Chat Potté ?',o:['San Ricardo','San Puss','Valdoria','Santa Felya']}
 ],
 hard:[
- {t:'Comment s’appellent les triplés de Shrek et Fiona ?',o:['Fergus, Farkle et Felicia','Hans, Hess et Helena','Farkus, Fern et Flore','Fifi, Fred et Fiona'],n:'Fergus et Farkle pour les garçons, Felicia pour la fille.'},
- {t:'Comment s’appelle l’oie géante de Rumpelstiltskin ?',o:['Fifi','Gigi','Coco','Blanchette'],n:'« Fifi ! » — son moyen de transport personnel.'},
- {t:'Sur quelle rue habite le marchand de muffins, selon la comptine ?',o:['Drury Lane','Baker Street','Elm Street','Duloc Lane'],n:'« Do you know the Muffin Man who lives on Drury Lane ? »'},
- {t:'Qui chante « Hallelujah » dans le film (pas au générique) ?',o:['John Cale','Leonard Cohen','Jeff Buckley','Rufus Wainwright'],n:'La version du film diffère de celle du générique.'},
- {t:'Sur quel morceau de Led Zeppelin Blanche-Neige danse-t-elle ?',o:['« Immigrant Song »','« Stairway to Heaven »','« Kashmir »','« Black Dog »'],n:'Pour convoquer ses amis animaux en plein combat.'},
- {t:'Quel terme désigne les enfants de l’Âne et de la Dragonne ?',o:['les Dronkeys','les Drânes','les Donkegons','les Baby-D'],n:'Contraction de « dragon » et « donkey ».'},
- {t:'Avec quelle sauce l’académie d’Arthur partage-t-elle son nom ?',o:['la sauce Worcestershire','la mayonnaise','la béchamel','la sauce tartare'],n:'Worcestershire : l’académie ET la sauce.'},
- {t:'Quelle émission de télé-réalité le Miroir parodie-t-il ?',o:['The Bachelor (l’émission de drague)','Koh-Lanta','la Star Academy','la Roue de la fortune'],n:'« Prétendante n°1… n°2… n°3… »'},
- {t:'Quel film d’action Fiona parodie-t-elle contre Monsieur Hood ?',o:['Matrix','Kill Bill','Rambo','Terminator'],n:'Le coup de pied en suspension dans l’air.'},
- {t:'La boutique « Versailles » parodie quelle marque ?',o:['Versace','Vuitton','Hermès','Chanel'],n:'Un jeu de mots sur la façade de Fort Fort Lointain.'},
- {t:'« Saxon 5e Avenue » parodie quel grand magasin ?',o:['Saks Fifth Avenue','Harrods','Macy’s','les Galeries Lafayette'],n:'Le Hollywood-parodie continue dans les boutiques.'},
- {t:'Que signifie le surnom « Softpaws » de Kitty ?',o:['pattes de velours','griffes d’acier','pattes rapides','chaussettes volées'],n:'Douce en apparence, redoutable en réalité.'},
- {t:'Quel est le nom complet de Humpty Dumpty ?',o:['Humpty Alexandre Dumpty','Humpty Dumpty II','Alexandre le Gros','Humpty Scott'],n:'Revealed pendant le film.'},
- {t:'Qui a réalisé le premier Shrek ?',o:['Andrew Adamson et Vicky Jenson','Steven Spielberg','Chris Miller','Mike Mitchell'],n:'Adamson réalisera aussi Shrek 2.'},
- {t:'Qui a réalisé Shrek 2 ?',o:['Andrew Adamson','Chris Miller','Mike Mitchell','Tim Burton'],n:'Co-réalisé avec Kelly Asbury et Conrad Vernon.'},
- {t:'Qui double Rumpelstiltskin en anglais ?',o:['Walt Dohrn','Eddie Murphy','Mike Myers','Justin Timberlake'],n:'Un membre de l’équipe artistique passé devant la caméra vocale.'},
- {t:'Dans le conte des Grimm, que doit deviner Rumpelstiltskin ?',o:['le nom du bébé de la reine','l’âge du roi','un trésor caché','le nom d’une fée'],n:'Ici, il EST le nom qu’il faut deviner.'},
- {t:'Quel décor entoure la tour de Fiona ?',o:['un lac de lave','une forêt d’épines','une mer de brume','un désert de sel'],n:'Un volcan mort, entouré de lave.'},
- {t:'Environ combien de temps Fiona a-t-elle passé dans la tour ?',o:['une vingtaine d’années','quelques mois','un an','cent ans'],n:'Enfermée enfant, secourue presque trentenaire.'},
- {t:'Quelle comptine Farquaad récite-t-il pour intimider Gingy ?',o:['« Le marchand de muffins »','« Il était un petit navire »','« Frère Jacques »','« Meunier tu dors »'],n:'Le Muffin Man — comptine anglaise classique.'},
- {t:'Quel est le nom complet de la potion volée (VO) ?',o:['Happily Ever After Potion','True Love Potion','Beauty Potion','Midnight Potion'],n:'« Heureux pour toujours » en français.'},
- {t:'Quel est le nom du petit garçon « Fais le rugissement » (VO) ?',o:['Butter Pants','Beurre','Tiny Tim','Little Joe'],n:'Crédité sous ce nom au générique.'},
- {t:'Quel est le titre original du quatrième film ?',o:['Shrek Forever After','Shrek The Final Chapter','Shrek 4 Ever','Shrek Happens'],n:'Français : « Il était une fin ».'},
- {t:'À quel âge Fiona a-t-elle été enfermée dans la tour ?',o:['sept ans','treize ans','seize ans','dix-huit ans'],n:'La fée Carabosse le rappelle aux parents.'},
- {t:'Quel méchant célèbre fréquente la Pomme Empoisonnée ?',o:['le Capitaine Crochet','Maleficent','Ursula','Dracula'],n:'Il y a même son piano.'},
- {t:'Que commande le Chat Potté au bar de la Pomme Empoisonnée ?',o:['« Leche » (du lait)','du vin','de la bière','du jus d’orange'],n:'« Leche. » Un seul mot, toute une légende.'},
- {t:'Qui est Doris, la barmaid de la Pomme Empoisonnée ?',o:['une belle-sœur de Cendrillon','une sorcière','une ogresse','une fée'],n:'Une « belle-sœur » ugly stepsister en goguette.'},
- {t:'Qui est Mabel dans Shrek 3 ?',o:['l’autre belle-sœur de Cendrillon','la femme du loup','une fée','une princesse'],n:'Les deux sœurs finissent réconciliées avec Cendrillon.'},
- {t:'Comment s’appelle la mère géante de l’Oie d’or (film du Chat) ?',o:['la Grande Terreur','Maman Oie','Grossgoose','Madame Poule'],n:'« The Great Terror » — il ne fallait pas la réveiller.'},
- {t:'Quel jeu-parodie du générique de Shrek 2 imite American Idol ?',o:['Far Far Away Idol','Fort Fort Star','Shrek Idol','Royal Voice'],n:'Le bonus interactif du DVD.'},
- {t:'Comment s’appelle l’ogre cuisinier de la résistance (Shrek 4) ?',o:['Cookie','Brogan','Gorm','Grunt'],n:'Il cuisine… du « déjeuner d’ogre ».'},
- {t:'Et le gros ogre compagnon de la résistance ?',o:['Brogan','Cookie','Jonas','Big O'],n:'L’un cuisine, l’autre cogne.'},
- {t:'Quelle est la phrase de combat du Chat Potté ?',o:['« Crains-moi, si tu l’oses »','« La mort au front ! »','« Pour l’Espagne ! »','« En garde, fromage ! »'],n:'« Fear me, if you dare. »'},
- {t:'Quelle arme utilise le Loup de la Mort (Chat Potté 2) ?',o:['deux faucilles','une épée','une hache','un arc'],n:'Sifflement de faucilles… et whistling glaçant.'},
- {t:'Qui est le chien fidèle du Chat Potté 2 ?',o:['Perrito','Rufus','Max','Chien-qui-vole'],n:'Un chiot au cœur immense et au passé tragique.'},
- {t:'Quelle famille accompagne Boucle d’Or dans le Chat Potté 2 ?',o:['les trois ours','les trois cochons','les loups','les nains'],n:'Goldilocks et les Three Bears, version hors-la-loi.'},
- {t:'Combien de vies reste-t-il au Chat Potté dans le film 2 ?',o:['une seule','trois','cinq','sept'],n:'Huit vies gaspillées. La dernière en cours.'},
- {t:'Qui est le grand méchant du Chat Potté 2 : la dernière requête ?',o:['« Gros » Jack Horner','Rumpelstiltskin','la fée Carabosse','Farquaad'],n:'Un collectionneur d’objets magiques sans foi ni loi.'},
- {t:'Quel artefact exauce les souhaits dans le Chat Potté 2 ?',o:['l’Étoile à souhait','la couronne d’or','le miroir','la pierre de lune'],n:'Un chemin d’étoiles périlleux pour l’atteindre.'},
- {t:'Combien de souhaits accorde-t-elle ?',o:['un seul','trois','sept','illimités'],n:'Un seul, à se partager… ou pas.'},
- {t:'Quel est le titre français du Chat Potté 2 ?',o:['la dernière requête','les neuf vies','la légende perdue','l’Étoile noire'],n:'« Puss in Boots: The Last Wish » (2022).'},
- {t:'Combien de films dérivés du Chat Potté existent-ils ?',o:['deux (2011 et 2022)','un','trois','aucun'],n:'Avec une suite déjà en route.'},
- {t:'Qui a écrit le livre « Shrek ! » (1990), source du film ?',o:['William Steig','Maurice Sendak','Dr. Seuss','Roald Dahl'],n:'Un dessinateur et humoriste new-yorkais.'},
- {t:'Que signifie le mot « Shrek » en yiddish ?',o:['effroi','ogre','ami','marais'],n:'Du germanique « Schreck » : la frayeur.'},
- {t:'Qui a interprété Shrek à Broadway ?',o:['Brian d’Arcy James','Nathan Lane','Norbert Leo Butz','Michael Cerveris'],n:'Créateur du rôle en 2008.'},
- {t:'Qui a interprété Fiona à Broadway ?',o:['Sutton Foster','Kristin Chenoweth','Idina Menzel','Lea Salonga'],n:'Une star de la comédie musicale américaine.'},
- {t:'Combien d’Oscars les quatre films Shrek ont-ils remporté au total ?',o:['un seul','deux','trois','aucun'],n:'Le premier, en 2002, pour l’animation.'},
- {t:'Que demandait Farquaad d’abord au Miroir Magique ?',o:['si Duloc était le royaume le plus parfait','qui était la plus belle','où se trouvait Fiona','quel était son avenir'],n:'Avant de passer au jeu de drague.'},
- {t:'Quel pacte Rumpel avait-il failli conclure avant les films ?',o:['le royaume contre la fin de la malédiction de Fiona','le marais contre l’Âne','la couronne contre un dragon','rien du tout'],n:'Le contrat fut annulé quand Fiona fut sauvée.'},
- {t:'Comment le contrat de Rumpel prend-il fin physiquement ?',o:['il se déchire tout seul','il brûle','Merlin l’efface','l’oie le mange'],n:'Le baiser d’amour vrai en fait des confettis.'}
+{t:'Les triplés de Shrek et Fiona s’appellent…',o:['Fergus, Farkle et Felicia','Hans, Hess et Helena','Farkus, Fern et Flore','Fifi, Fred et Fiona']},
+{t:'L’oie géante de Rumpelstiltskin ?',o:['Fifi','Gigi','Coco','Blanchette']},
+{t:'Le marchand de muffins habite quelle rue ?',o:['Drury Lane','Baker Street','Elm Street','Duloc Lane']},
+{t:'Qui chante « Hallelujah » dans le film (pas au générique) ?',o:['John Cale','Leonard Cohen','Jeff Buckley','Rufus Wainwright']},
+{t:'Blanche-Neige danse sur quel Led Zeppelin ?',o:['« Immigrant Song »','« Stairway to Heaven »','« Kashmir »','« Black Dog »']},
+{t:'Les enfants de l’Âne et de la Dragonne, on les appelle…',o:['Les Dronkeys','Les Drânes','Les Donkegons','Les Baby-D']},
+{t:'L’académie d’Arthur partage son nom avec quelle sauce ?',o:['La sauce Worcestershire','La mayonnaise','La béchamel','La sauce tartare']},
+{t:'Le Miroir parodie quelle émission ?',o:['The Bachelor','Koh-Lanta','La Star Academy','La Roue de la fortune']},
+{t:'Fiona parodie quel film contre Monsieur Hood ?',o:['Matrix','Kill Bill','Rambo','Terminator']},
+{t:'La boutique « Versailles » parodie quelle marque ?',o:['Versace','Vuitton','Hermès','Chanel']},
+{t:'« Saxon 5e Avenue » parodie quel magasin ?',o:['Saks Fifth Avenue','Harrods','Macy’s','Les Galeries Lafayette']},
+{t:'« Softpaws », ça veut dire quoi ?',o:['Pattes de velours','Griffes d’acier','Pattes rapides','Chaussettes volées']},
+{t:'Le nom complet de Humpty Dumpty ?',o:['Humpty Alexandre Dumpty','Humpty Dumpty II','Alexandre le Gros','Humpty Scott']},
+{t:'Qui a réalisé le premier Shrek ?',o:['Andrew Adamson et Vicky Jenson','Steven Spielberg','Chris Miller','Mike Mitchell']},
+{t:'Qui a réalisé Shrek 2 ?',o:['Andrew Adamson','Chris Miller','Mike Mitchell','Tim Burton']},
+{t:'Rumpelstiltskin en VO, c’est qui ?',o:['Walt Dohrn','Eddie Murphy','Mike Myers','Justin Timberlake']},
+{t:'Dans le conte des Grimm, qui doit deviner le nom de Rumpelstiltskin ?',o:['La reine','Le roi','Le meunier','La fée']},
+{t:'La tour de Fiona est entourée de quoi ?',o:['Un lac de lave','Une forêt d’épines','Une mer de brume','Un désert de sel']},
+{t:'Fiona est restée combien de temps dans la tour ?',o:['Une vingtaine d’années','Quelques mois','Un an','Cent ans']},
+{t:'Farquaad récite quelle comptine pour intimider Gingy ?',o:['« Le marchand de muffins »','« Il était un petit navire »','« Frère Jacques »','« Meunier tu dors »']},
+{t:'Le nom complet de la potion (VO) ?',o:['Happily Ever After Potion','True Love Potion','Beauty Potion','Midnight Potion']},
+{t:'Le petit garçon « Fais le rugissement » s’appelle (VO)…',o:['Butter Pants','Beurre','Tiny Tim','Little Joe']},
+{t:'Le titre original du quatrième film ?',o:['Shrek Forever After','Shrek The Final Chapter','Shrek 4 Ever','Shrek Happens']},
+{t:'Fiona a été enfermée à quel âge ?',o:['Sept ans','Treize ans','Seize ans','Dix-huit ans']},
+{t:'Quel méchant célèbre traîne à la Pomme Empoisonnée ?',o:['Le Capitaine Crochet','Maleficent','Ursula','Dracula']},
+{t:'Le Chat commande quoi au bar ?',o:['« Leche » (du lait)','Du vin','De la bière','Du jus d’orange']},
+{t:'Doris, la barmaid, c’est qui ?',o:['Une belle-sœur de Cendrillon','Une sorcière','Une ogresse','Une fée']},
+{t:'La mère géante de l’Oie d’or ?',o:['La Grande Terreur','Maman Oie','Grossgoose','Madame Poule']},
+{t:'Le jeu-parodie du générique de Shrek 2 ?',o:['Far Far Away Idol','Fort Fort Star','Shrek Idol','Royal Voice']},
+{t:'L’ogre cuisinier de la résistance (Shrek 4) ?',o:['Cookie','Brogan','Gorm','Grunt']},
+{t:'Le gros ogre compagnon de la résistance ?',o:['Brogan','Cookie','Jonas','Big O']},
+{t:'La phrase de combat du Chat Potté ?',o:['« Crains-moi, si tu l’oses »','« La mort au front ! »','« Pour l’Espagne ! »','« En garde, fromage ! »']},
+{t:'L’arme du Loup de la Mort (Chat Potté 2) ?',o:['Deux faucilles','Une épée','Une hache','Un arc']},
+{t:'Le chien du Chat Potté 2 ?',o:['Perrito','Rufus','Max','Chien-qui-vole']},
+{t:'Boucle d’Or traîne avec quelle famille ?',o:['Les trois ours','Les trois cochons','Les loups','Les nains']},
+{t:'Il reste combien de vies au Chat dans le film 2 ?',o:['Une seule','Trois','Cinq','Sept']},
+{t:'Le grand méchant du Chat Potté 2 ?',o:['« Gros » Jack Horner','Rumpelstiltskin','La fée Carabosse','Farquaad']},
+{t:'L’artefact qui exauce les souhaits ?',o:['L’Étoile à souhait','La couronne d’or','Le miroir','La pierre de lune']},
+{t:'Combien de souhaits elle accorde ?',o:['Un seul','Trois','Sept','Illimités']},
+{t:'Le titre français du Chat Potté 2 ?',o:['La dernière requête','Les neuf vies','La légende perdue','L’Étoile noire']},
+{t:'Combien de films dérivés du Chat Potté ?',o:['Deux (2011 et 2022)','Un','Trois','Aucun']},
+{t:'Qui a joué Shrek à Broadway ?',o:['Brian d’Arcy James','Nathan Lane','Norbert Leo Butz','Michael Cerveris']},
+{t:'Qui a joué Fiona à Broadway ?',o:['Sutton Foster','Kristin Chenoweth','Idina Menzel','Lea Salonga']},
+{t:'Combien d’Oscars pour les quatre films au total ?',o:['Un seul','Deux','Trois','Aucun']},
+{t:'Farquaad demande quoi d’abord au Miroir ?',o:['Si Duloc était le royaume le plus parfait','Qui était la plus belle','Où se trouvait Fiona','Quel était son avenir']},
+{t:'Le pacte que Rumpel avait failli conclure avant les films ?',o:['Le royaume contre la fin de la malédiction de Fiona','Le marais contre l’Âne','La couronne contre un dragon','Rien du tout']},
+{t:'Le contrat de Rumpel finit comment physiquement ?',o:['Il se déchire tout seul','Il brûle','Merlin l’efface','L’oie le mange']}
 ]};
 let dailyCache=null,dailyCacheDay=null;
 function getDaily(){
@@ -860,142 +707,134 @@ function getDaily(){
  return dailyCache;
 }
 
-const goodLines=['Bonne pioche. La porte grince…','Bien. Un grognement d’approbation.','Un cran de plus. Continue.','L’ogre approuve. C’est rare.'];
-const badLines=['Et non. La porte claque d’un cran.','Un grognement sourd dans le noir.','Même l’Âne faisait mieux.','GRRR. La porte s’est refermée.'];
 function animateMain(){$('#mainBox').animate([{opacity:0,transform:'translateY(10px)'},{opacity:1,transform:'translateY(0)'}],{duration:300,easing:'ease-out'})}
-
 function renderHeroUI(){
- const done=GAME.st.lastDone===todayKey();
- $('#pillN').textContent=GAME.st.streak+(GAME.st.streak>1?' jours':' jour');
- $('#pill').classList.toggle('zero',GAME.st.streak===0);
+const done=GAME.st.lastDone===todayKey();
+$('#pillN').textContent=GAME.st.streak+(GAME.st.streak>1?' jours':' jour');
+$('#pill').classList.toggle('zero',GAME.st.streak===0);
 }
 function renderBand(){
- const st=GAME.st;
- $('#streakN').textContent=st.streak;$('#streakU').textContent=st.streak>1?'jours':'jour';
- $('#bestN').textContent=st.best;$('#winsN').textContent=st.wins;
- $('#rightN').textContent=st.totalRight;
- $('#pctN').textContent=st.totalPlayed?'('+Math.round(st.totalRight/(st.totalPlayed*5)*100)+' %)':'';
- $('#flame').classList.toggle('lit',st.streak>0);
- let html='';
- for(let i=6;i>=0;i--){
-  const d=new Date();d.setDate(d.getDate()-i);
-  const h=st.history[keyOf(d)];
-  let cls='wd';cls+=h?(h.ok?' win':' lose'):(i===0?' today':'');
-  html+='<span class="'+cls+'" title="'+cap(fmtDate(d))+(h?' — '+h.s+'/5':'')+'"></span>';
- }
- $('#week').innerHTML=html;
+const st=GAME.st;
+$('#streakN').textContent=st.streak;$('#streakU').textContent=st.streak>1?'jours':'jour';
+$('#bestN').textContent=st.best;$('#winsN').textContent=st.wins;
+$('#rightN').textContent=st.totalRight;
+$('#pctN').textContent=st.totalPlayed?'('+Math.round(st.totalRight/(st.totalPlayed*5)*100)+' %)':'';
+$('#flame').classList.toggle('lit',st.streak>0);
+let html='';
+for(let i=6;i>=0;i--){
+const d=new Date();d.setDate(d.getDate()-i);
+const h=st.history[keyOf(d)];
+let cls='wd';cls+=h?(h.ok?' win':' lose'):(i===0?' today':'');
+html+='<span class="'+cls+'" title="'+cap(fmtDate(d))+(h?' — '+h.s+'/5':'')+'"></span>';
+}
+$('#week').innerHTML=html;
 }
 function renderPanel(){
- if(GAME.phase==='quiz'){renderQuestion();return}
- if(GAME.st.lastDone===todayKey()){renderDone(false);return}
- renderReady();
+if(GAME.phase==='quiz'){renderQuestion();return}
+if(GAME.st.lastDone===todayKey()){renderDone(false);return}
+renderReady();
 }
 function renderReady(){
- GAME.phase='ready';setOh(0,'instant');
- $('#ohSide').style.display='none';
- $('#mainBox').innerHTML=
-  '<div class="p-kicker">Quiz du jour — '+cap(fmtDate(new Date()))+'</div>'+
-  '<h2 class="p-title">Shrek s’est enfermé. Fais-le sortir.</h2>'+
-  '<button class="btn big" id="startBtn">Frapper à la porte →</button>';
- $('#startBtn').addEventListener('click',()=>{
-  const b=$('#startBtn');b.disabled=true;b.style.opacity=.6;
-  GAME.phase='entering';
-  heroPoke();
-  setTimeout(()=>{
-   showPose('idle',true);
-   setOh(0,'slam');ohBubble('OCCUPÉ !');
-   GAME.phase='quiz';GAME.current={qs:getDaily(),answers:[],i:0};
-   renderQuestion();
-  },900);
- });
- animateMain();
+GAME.phase='ready';setOh(0,'instant');
+$('#ohSide').style.display='none';
+$('#mainBox').innerHTML=
+'<div class="p-kicker">Quiz du jour — '+cap(fmtDate(new Date()))+'</div>'+
+'<h2 class="p-title">Shrek s’est enfermé. Fais-le sortir.</h2>'+
+'<p class="p-sub">Cinq questions sur la saga. Trois bonnes réponses, et la porte cède.</p>'+
+'<button class="btn big" id="startBtn">Frapper à la porte →</button>';
+$('#startBtn').addEventListener('click',()=>{
+const b=$('#startBtn');b.disabled=true;b.style.opacity=.6;
+GAME.phase='entering';
+heroPoke();
+setTimeout(()=>{
+showPose('idle',true);
+setOh(0,'slam');ohBubble('OCCUPÉ !');
+GAME.phase='quiz';GAME.current={qs:getDaily(),answers:[],i:0};
+renderQuestion();
+},900);
+});
+animateMain();
 }
 function renderQuestion(){
- const c=GAME.current,q=c.qs[c.i];
- const pips=[0,1,2,3,4].map(n=>{
-  const a=c.answers[n];let cls='pip';
-  if(a)cls+=a.ok?' good':' bad';else if(n===c.i)cls+=' now';
-  return '<span class="'+cls+'"></span>';
- }).join('');
- $('#mainBox').innerHTML=
-  '<span class="q-count">Question '+(c.i+1)+' / 5 · <span class="lvl '+q.lv+'">'+({easy:'Facile',medium:'Moyen',hard:'Difficile'})[q.lv]+'</span></span>'+
-  '<h3 class="q-text">'+q.t+'</h3>'+
-  '<div class="opts">'+q.opts.map((o,k)=>'<button class="opt" data-k="'+k+'"><span class="key">'+'ABCD'[k]+'</span><span>'+o+'</span></button>').join('')+'</div>'+
-  '<div class="feedback" id="fb"></div>';
- document.querySelectorAll('.opt').forEach(b=>b.addEventListener('click',()=>onAnswer(+b.dataset.k)));
- animateMain();
+const c=GAME.current,q=c.qs[c.i];
+const pips=[0,1,2,3,4].map(n=>{
+const a=c.answers[n];let cls='pip';
+if(a)cls+=a.ok?' good':' bad';else if(n===c.i)cls+=' now';
+return '<span class="'+cls+'"></span>';
+}).join('');
+$('#mainBox').innerHTML=
+'<span class="q-count">Question '+(c.i+1)+' / 5 · <span class="lvl '+q.lv+'">'+({easy:'Facile',medium:'Moyen',hard:'Difficile'})[q.lv]+'</span></span>'+
+'<h3 class="q-text">'+q.t+'</h3>'+
+'<div class="opts">'+q.opts.map((o,k)=>'<button class="opt" data-k="'+k+'"><span class="key">'+'ABCD'[k]+'</span><span>'+o+'</span></button>').join('')+'</div>'+
+'<div class="feedback" id="fb"></div>';
+document.querySelectorAll('.opt').forEach(b=>b.addEventListener('click',()=>onAnswer(+b.dataset.k)));
+animateMain();
 }
 function onAnswer(k){
- const c=GAME.current,q=c.qs[c.i],ok=k===q.correct;
- c.answers.push({k,ok});
- document.querySelectorAll('.opt').forEach((b,j)=>{
-  b.disabled=true;
-  if(j===q.correct)b.classList.add('correct');
-  else if(j===k)b.classList.add('wrong');
-  else b.classList.add('dim');
- });
- const rights=c.answers.filter(a=>a.ok).length;
- if(ok){
-  setOh(rights,'open');ohBubble(rights===5?'…':'Héhé.');
-  if(rights===5&&c.i===4)setTimeout(pounce,700);
- }else{
-  setOh(rights,'slam');ohBubble(pick(['GRRR…','HÉ !','Tss.']));rageFace();
- }
- $('#fb').innerHTML=
-  '<p class="fb-line '+(ok?'fb-good':'fb-bad')+'">'+(ok?pick(goodLines):pick(badLines))+'</p>'+
-  '<p class="fb-note">'+q.note+'</p>'+
-  '<button class="btn dark" id="nextBtn">'+(c.i<4?'Question suivante →':'Voir le score →')+'</button>';
- $('#nextBtn').addEventListener('click',()=>{if(c.i<4){c.i++;renderQuestion()}else finishQuiz()});
- $('#fb').scrollIntoView({behavior:'smooth',block:'nearest'});
+const c=GAME.current,q=c.qs[c.i],ok=k===q.correct;
+c.answers.push({k,ok});
+document.querySelectorAll('.opt').forEach((b,j)=>{
+b.disabled=true;
+if(j===q.correct)b.classList.add('correct');
+else if(j===k)b.classList.add('wrong');
+else b.classList.add('dim');
+});
+const rights=c.answers.filter(a=>a.ok).length;
+if(ok){
+setOh(rights,'open');ohBubble(rights===5?'…':'Héhé.');
+}else{
+setOh(rights,'slam');ohBubble(pick(['GRRR…','HÉ !','Tss.']));rageFace();
+}
+if(c.i===4&&rights>=3)setTimeout(pounce,700);
+$('#fb').innerHTML='<button class="btn dark" id="nextBtn">'+(c.i<4?'Question suivante →':'Voir le score →')+'</button>';
+$('#nextBtn').addEventListener('click',()=>{if(c.i<4){c.i++;renderQuestion()}else finishQuiz()});
+$('#fb').scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 function finishQuiz(){
- const c=GAME.current,score=c.answers.filter(a=>a.ok).length,success=score>=4;
- const st=GAME.st,prev=(st.lastDone===yesterdayKey())?st.streak:0,prevBest=st.best;
- st.streak=prev+1;st.best=Math.max(st.best,st.streak);
- if(success)st.wins++;
- st.totalPlayed++;st.totalRight+=score;
- st.lastDone=todayKey();st.lastScore=score;st.lastSuccess=success;
- st.lastAnswers=c.answers.map(a=>a.k);
- st.history[todayKey()]={s:score,ok:success};
- saveState();GAME.current=null;
- renderDone(true,{score,success,prev,prevBest});
- renderHeroUI();renderBand();
+const c=GAME.current,score=c.answers.filter(a=>a.ok).length,success=score>=3;
+const st=GAME.st,prev=(st.lastDone===yesterdayKey())?st.streak:0,prevBest=st.best;
+st.streak=prev+1;st.best=Math.max(st.best,st.streak);
+if(success)st.wins++;
+st.totalPlayed++;st.totalRight+=score;
+st.lastDone=todayKey();st.lastScore=score;st.lastSuccess=success;
+st.lastAnswers=c.answers.map(a=>a.k);
+st.history[todayKey()]={s:score,ok:success};
+saveState();GAME.current=null;
+renderDone(true,{score,success,prev,prevBest});
+renderHeroUI();renderBand();
 }
 function finishLine(m){
- const st=GAME.st;
- if(m.prev===0)return 'Série lancée : 1 jour.';
- if(st.streak>m.prevBest)return 'Record battu ! '+st.streak+' jours d’affilée.';
- return 'Série : '+st.streak+' jours.';
+const st=GAME.st;
+if(m.prev===0)return 'Série lancée : 1 jour.';
+if(st.streak>m.prevBest)return 'Record battu ! '+st.streak+' jours d’affilée.';
+return 'Série : '+st.streak+' jours.';
 }
 function renderDone(just,meta){
- const st=GAME.st,score=st.lastScore,success=st.lastSuccess,ans=st.lastAnswers,qs=getDaily();
- GAME.phase='done';
- const title=just?(success?(score===5?'Shrek A TRAVERSÉ ton écran.':'La porte a cédé.'):'CLAQUET. Porte close.'):'Shrek a déjà claqué la porte du jour.';
- const line=just?finishLine(meta):'Série en cours : '+st.streak+' jour'+(st.streak>1?'s':'')+'.';
- $('#mainBox').innerHTML=
-  '<div class="p-kicker">Quiz du jour — '+cap(fmtDate(new Date()))+'</div>'+
-  '<div class="verdict-head"><div class="v-score">'+score+'<small> / 5</small></div><span class="badge '+(success?'ok':'no')+'">'+(success?'Réussi':'Manqué')+'</span></div>'+
-  '<h2 class="p-title">'+title+'</h2><p class="v-line">'+line+'</p>'+
-  '<div class="recap">'+qs.map((q,i)=>{
-   const a=ans&&ans[i]!==undefined?ans[i]:null,ok=a===q.correct;
-   return '<div class="recap-item"><span class="rmk '+(ok?'ok':'no')+'">'+(ok?'✓':'✕')+'</span><div>'+q.t+'<br>Bonne réponse : <span class="r-ans">'+q.opts[q.correct]+'</span></div></div>';
-  }).join('')+'</div>'+
-  '<div class="p-actions">'+
-  (score===5&&success?'<button class="btn dark" id="replayBtn">Revoir le jaillissement</button>':'')+
-  '<button class="btn dark" id="copyBtn">Copier mon score</button>'+
-  '<span class="cd-hint">Prochaine porte dans <b data-cd>…</b></span></div>';
- $('#copyBtn').addEventListener('click',copyScore);
- const rp=$('#replayBtn');if(rp)rp.addEventListener('click',()=>{if(just)pounce();else toast('Un seul jaillissement par jour, ogre.')});
- if(just){
-  if(success&&score===5){}
-  else if(success){setOh(4,'open');showPose('idle',true)}
-  else{setOh(0,'slam');showPose('idle',true);heroBubble('REVIENS DEMAIN.',2200);rageFace()}
- }else{
-  if(success&&score===5){setOh(5,'instant');showPose('scare',true);showSidePuppet()}
-  else if(success){setOh(4,'instant');showPose('idle',true)}
-  else{setOh(0,'instant');showPose('idle',true)}
- }
- animateMain();
+const st=GAME.st,score=st.lastScore,success=st.lastSuccess,ans=st.lastAnswers,qs=getDaily();
+GAME.phase='done';
+const title=just?(success?(score===5?'Shrek A TRAVERSÉ ton écran.':'La porte a cédé.'):'CLAQUET. Porte close.'):'Shrek a déjà claqué la porte du jour.';
+const line=just?finishLine(meta):'Série en cours : '+st.streak+' jour'+(st.streak>1?'s':'')+'.';
+$('#mainBox').innerHTML=
+'<div class="p-kicker">Quiz du jour — '+cap(fmtDate(new Date()))+'</div>'+
+'<div class="verdict-head"><div class="v-score">'+score+'<small> / 5</small></div><span class="badge '+(success?'ok':'no')+'">'+(success?'Réussi':'Manqué')+'</span></div>'+
+'<h2 class="p-title">'+title+'</h2><p class="v-line">'+line+'</p>'+
+'<div class="recap">'+qs.map((q,i)=>{
+const a=ans&&ans[i]!==undefined?ans[i]:null,ok=a===q.correct;
+return '<div class="recap-item"><span class="rmk '+(ok?'ok':'no')+'">'+(ok?'✓':'✕')+'</span><div>'+q.t+'<br>Bonne réponse : <span class="r-ans">'+q.opts[q.correct]+'</span></div></div>';
+}).join('')+'</div>'+
+'<div class="p-actions">'+
+(success?'<button class="btn dark" id="replayBtn">Revoir le jaillissement</button>':'')+
+'<button class="btn dark" id="copyBtn">Copier mon score</button>'+
+'<span class="cd-hint">Prochaine porte dans <b data-cd>…</b></span></div>';
+$('#copyBtn').addEventListener('click',copyScore);
+const rp=$('#replayBtn');if(rp)rp.addEventListener('click',()=>{if(just)pounce();else toast('Un seul jaillissement par jour, ogre.')});
+if(just){
+if(!success){setOh(0,'slam');showPose('idle',true);heroBubble('REVIENS DEMAIN.',2200);rageFace()}
+}else{
+if(success){setOh(5,'instant');showPose('scare',true);showSidePuppet()}
+else{setOh(0,'instant');showPose('idle',true)}
+}
+animateMain();
 }
 function copyScore(){
  const st=GAME.st,qs=getDaily();
